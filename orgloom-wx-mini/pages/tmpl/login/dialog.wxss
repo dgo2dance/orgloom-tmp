@@ -1,0 +1,121 @@
+@import '/app.wxss';
+@import "/utils/weui.wxss";
+
+
+.-title {
+  font-size: 28rpx;
+  color: gray;
+  padding: 24rpx 28rpx;
+}
+
+.mask {
+  position: fixed; 
+  top: 0px; left: 0px; right: 0px; bottom: -1000px;
+  z-index: 19999;
+  background-color: rgba(0, 0, 0, .6);
+  
+}
+
+.dialog {
+  position: fixed;
+  top: 10vh; left: 96rpx; right: 96rpx;
+  z-index: 999;
+  background: white;
+  border-radius: 12rpx;
+  display: flex;
+  flex-direction: column;
+  padding: 86rpx 64rpx 64rpx 64rpx;
+}
+
+.close {
+  position: absolute;
+  top: 32rpx;
+  right: 32rpx;
+  width:42rpx; 
+  height:42rpx;
+}
+
+.dialog .-title {
+  padding: 12rpx 0;
+  font-size: 32rpx;
+}
+
+.dialog .note {
+  margin-top: 24rpx;
+  font-size: 28rpx;
+  color: gray;
+}
+
+.input {
+  width: 100%;
+  display: flex;
+  align-items: center;
+  font-size: 32rpx;
+}
+
+.circle {
+  margin-right: 16rpx;
+  width: 32rpx;
+  height: 32rpx;
+  border-radius: 50%;
+  border: 1px solid gainsboro;
+}
+
+.name {
+  color: #666;
+  font-weight: 500;
+  margin-right: 12rpx;
+}
+
+.btn {
+  position: relative;
+  margin-left: 32rpx;
+  text-align: center;
+}
+
+.underline {
+  width: 100%;
+  height: 1px;
+  background: #1890FF;
+  opacity: 1;
+  position: absolute;
+  z-index: 0;
+  bottom: 7rpx;
+}
+
+.btn-submit {
+  background-color: #f8f8f8;
+  color:white;
+  font-size: 32rpx;
+  margin-top:128rpx;
+  width:256rpx;
+}
+
+.btn-submit-hover {
+ opacity: .6;
+}
+/*
+.weui-icon-back-arrow-thin {
+  -webkit-mask-image: url(data:image/svg+xml,%3Csvg%20width%3D%2212%22%20height%3D%2224%22%20xmlns%3D…2.682%2012%2010%2019.438z%22%20fill-rule%3D%22evenodd%22%2F%3E%3C%2Fsvg%3E);
+  mask-image: url(data:image/svg+xml,%3Csvg%20width%3D%2212%22%20height%3D%2224%22%20xmlns%3D…2.682%2012%2010%2019.438z%22%20fill-rule%3D%22evenodd%22%2F%3E%3C%2Fsvg%3E);
+}
+*/
+.weui-icon-back, .weui-icon-back-arrow, .weui-icon-back-arrow-thin, .weui-icon-back-circle {
+  color: var(--weui-FG-0);
+}
+.weui-icon-arrow, .weui-icon-arrow-bold, .weui-icon-back-arrow, .weui-icon-back-arrow-thin {
+  width: 12px;
+}
+[class^=weui-icon-] {
+  display: inline-block;
+  vertical-align: middle;
+  width: 24px;
+  height: 24px;
+  -webkit-mask-position: 50% 50%;
+  mask-position: 50% 50%;
+  -webkit-mask-repeat: no-repeat;
+  mask-repeat: no-repeat;
+  -webkit-mask-size: 100%;
+  mask-size: 100%;
+  background-color: currentColor;
+}

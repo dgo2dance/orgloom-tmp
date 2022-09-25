@@ -1,0 +1,109 @@
+<view class="contain">
+      <view class="card" >
+            <view class="title">通过做任务或者购买</view>
+            <view class="num">获取新的积分</view>
+      </view>
+
+
+       <view>
+                  <view  class="weui-cell ui-booklist-card" hover-class="ui--active" >
+      <image class="ui-booklist-card__img" src="{{item.logoIcon || '/images/edit01.png'}}" mode="aspectFit"></image>
+      <view class="ui-booklist-card__info">
+        <view class="ui-booklist-card__info-title font-black-34" style="color: #888;font-size: 12px;">编辑组织（5积分）</view>
+        <!-- <view class="font-gray-26">
+         {{item.followCount}}人关注</view> -->
+      </view> 
+      <view class="ui-icon-more-area" style="width:180rpx">
+        <!-- <image src="/images/icon_more.png" mode="widthFix" class="ui-icon-more"></image> -->
+                          <view class='select-add-button'  bindtap='goPublish'>去编辑</view>
+
+      </view>
+    </view>
+
+        </view>
+
+
+       <view>
+                  <view  class="weui-cell ui-booklist-card" hover-class="ui--active"  bindtap='goPublish'>
+      <image class="ui-booklist-card__img" src="{{item.logoIcon || '/images/publish01.png'}}" mode="aspectFit"></image>
+      <view class="ui-booklist-card__info">
+        <view class="ui-booklist-card__info-title font-black-34" style="color: #888;font-size: 12px;">发布资讯（3积分）</view>
+        <!-- <view class="font-gray-26">
+         {{item.followCount}}人关注</view> -->
+      </view> 
+      <view class="ui-icon-more-area"  style="width:180rpx">
+        <!-- <image src="/images/icon_more.png" mode="widthFix" class="ui-icon-more"></image> -->
+                          <view class='select-add-button' bindtap='goPublish'>去发布</view>
+
+      </view>
+    </view>
+        </view>
+
+
+
+      <view>
+                  <view  class="weui-cell ui-booklist-card" hover-class="ui--active" >
+      <image class="ui-booklist-card__img" src="{{item.logoIcon || '/images/buy01.png'}}" mode="aspectFit"></image>
+      <view class="ui-booklist-card__info">
+        <view class="ui-booklist-card__info-title font-black-34" style="color: #888;font-size: 12px;">联系客服购买(9.9￥100积分)</view>
+        <!-- <view class="font-gray-26">
+         {{item.followCount}}人关注</view> -->
+      </view> 
+      <view class="ui-icon-more-area" data-type="create"  style="width:180rpx" hover-stop-propagation>
+        <!-- <image src="/images/icon_more.png" mode="widthFix" class="ui-icon-more"></image> -->
+              <button class="kefu-button cu-button content select-add-button" open-type="contact" session-from="weapp" >
+            
+              去联系
+              <!--   <view class='select-add-button' wx:if="{{!isSelected}}" bind:tap="showPopup">去联系</view> -->
+             </button>
+
+      </view>
+                  </view>
+      </view>
+
+
+           <view>
+                  <view  class="weui-cell ui-booklist-card" hover-class="ui--active" >
+      <image class="ui-booklist-card__img" src="{{item.logoIcon || '/images/pay.png'}}" mode="aspectFit"></image>
+      <view class="ui-booklist-card__info">
+        <view class="ui-booklist-card__info-title font-black-34" style="color: #888;font-size: 12px;">加入连系人完成交易(40积分)</view>
+        <!-- <view class="font-gray-26">
+         {{item.followCount}}人关注</view> -->
+      </view> 
+      <view class="ui-icon-more-area" data-type="create"   style="width:180rpx" hover-stop-propagation>
+                                      <view class='select-add-button' bindtap='goPublish'>去加入</view>
+
+        <!-- <image src="/images/icon_more.png" mode="widthFix" class="ui-icon-more"></image> -->
+              <!-- <button class="kefu-button cu-button content" open-type="contact" session-from="weapp" style="width:220rpx">
+                 <view class='select-add-button' wx:if="{{!isSelected}}" bind:tap="showPopup">去加入</view>
+             </button> -->
+
+      </view>
+                  </view>
+      </view>
+
+      
+
+            <!-- <view class="panel" >
+                  <navigator url="{{url}}" hover-class="panel-hd--active">
+                  <view class="panel-hd">
+                     <view style="display: inline-flex;flex: left;justify-content: space-around;">
+                     </view>
+                        <button class="kefu-button cu-button content" open-type="contact" session-from="weapp">
+推荐兑换     更多商品点击联系客服兑换
+
+
+
+                  
+                     <view class="panel-hd__arrow"></view>
+                  </button>
+                  </view>
+                  </navigator>
+            </view> -->
+
+
+
+
+    
+</view>
+

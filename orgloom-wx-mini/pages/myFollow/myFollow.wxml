@@ -1,0 +1,43 @@
+<wxs src="../../common.wxs" module="morejs" />
+
+
+
+<view>
+  <!--
+  <panel title="组织" url="/pages/my/my" >
+ <template is="showcase-book" data="{{books: recommendBooks}}"></template> 
+  </panel>
+  -->
+<view class="panel" >
+  <navigator url="{{url}}" hover-class="panel-hd--active">
+    <view class="panel-hd">
+      <view>我关注的</view>
+
+</view>
+  </navigator>
+  <slot></slot>
+</view>
+
+<view class="ui-panel"  >
+  
+        <navigator wx:for="{{list}}" wx:key="_id" class="weui-cell ui-booklist-card" hover-class="ui--active" url="/pages/stock/stock?id={{item.id}}&&name={{item.name}}">
+      <image class="ui-booklist-card__img" src="{{item.logoIcon || '/images/icon_empty_booklist.png'}}" mode="aspectFit"></image>
+      <view class="ui-booklist-card__info">
+        <view class="ui-booklist-card__info-title font-black-34">{{item.name}}</view>
+        <view class="font-gray-26">
+         {{item.followCount}}人关注</view>
+      </view>
+      <view class="ui-icon-more-area" data-type="create" data-index="{{index}}" catchtap="onShowActionSheet" hover-stop-propagation>
+        <image src="/images/icon_more.png" mode="widthFix" class="ui-icon-more"></image>
+      </view>
+    </navigator>
+</view>
+
+   
+
+  
+</view>
+
+
+<!-- 登录对话框 -->
+<kw-login class="login" />

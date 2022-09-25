@@ -1,0 +1,16 @@
+{
+  "name": "vant-weapp-demo",
+  "version": "1.0.0",
+  "description": "Collection of vant-weapp demos.",
+  "main": "app.js",
+  "scripts": {
+    "test": "echo \"Error: no test specified\" && exit 1"
+  },
+  "author": "",
+  "license": "ISC",
+  "dependencies": {
+    "@vant/weapp": "^1.10.3",
+    "socket.io-client": "^2.4.0",
+    "socket.io-mp-client": "^1.1.19"
+  }
+}

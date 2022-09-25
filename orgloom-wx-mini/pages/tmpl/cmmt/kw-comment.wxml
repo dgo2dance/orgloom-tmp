@@ -1,0 +1,4 @@
+<view class='comment'>
+  <image class="image" src='{{theme.images}}/comment.png'></image>
+  <text class="text">{{comments? comments: "评论" }}</text>
+</view>

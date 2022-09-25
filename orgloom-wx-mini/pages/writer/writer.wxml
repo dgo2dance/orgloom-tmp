@@ -1,0 +1,178 @@
+<!--pages/writer/writer.wxml-->
+<view class="content">
+
+<view class="top_contain">
+
+
+      <view class="top_img">
+            <image lazy-load src="{{url}}" mode="aspectFit"></image>
+      </view>
+       <view class="list_word">
+                                 
+                                    <view class="list_tag">
+                                                <view class="list_author_first ">{{name}}
+                                                </view>
+                                                <!-- <view class="list_author ">{{personDetail.positionName}} 
+                                                </view> -->
+                                    </view>
+                              </view>
+                                    <!--
+                               <view class="list_between">
+                                    <view class="list_price">{{personDetail.price}}500m</view>
+
+                              
+                                    <view class="list_time">{{morejs.timelog(item.creat )}}发布
+                                          
+                                    </view>
+                                    
+                                
+                              </view>
+                              -->
+
+</view>
+
+<view class="card">
+
+    <view>
+    <textarea class='input-input'
+      bindinput="bindTitle" 
+      maxlength='500'
+      placeholder="描述"
+      auto-height='{{true}}' 
+      />
+  </view>
+
+
+  <view>
+    <textarea class='text-input'
+      bindinput="bindContent" 
+      maxlength='500'
+      placeholder="内容"
+      auto-height='{{true}}' 
+      />
+  </view> 
+
+  <!-- video player -->
+  <view wx:if="{{video.src}}" class="video box">
+    <view class='del'>
+      <image
+        src="/res/del.png" 
+        data-idx="{{index}}"
+        bindtap='clickDeleteVideo' 
+        >
+      </image>
+    </view>
+    <video
+      src="{{video.src}}" 
+      object-fit="cover" 
+      show-fullscreen-btn="{{false}}">
+    </video>
+  </view>
+
+  <!-- image list -->
+  <view class='image-list' wx:if="{{images.length > 0}}">
+    <view class="thumb box" wx:for="{{images}}" wx:for-item="item" wx:key="{{item}}">
+      <view class='del'>
+        <image
+          src="/res/del.png" 
+          data-idx="{{index}}"
+          bindtap='clickDelete' 
+          >
+        </image>
+      </view>
+      <image src="{{item}}" 
+        mode='aspectFill' 
+        data-idx="{{index}}"
+        bindtap='clickImage' 
+        >
+      </image>
+    </view>
+    <view class="add" wx:if='{{images.length < 9}}' >
+      <image bindtap='chooseImage' src="/res/plus.png" ></image>
+    </view>
+  </view>
+
+  <!-- link preview
+  <view wx:if="{{link.url}}" class="box">
+    <view class='del'>
+      <image
+        src="/res/del.png" 
+        bindtap='clickDeleteLink' />
+    </view>
+    <view class="link">
+      <image src="{{link.logo}}"/>
+      <text>{{link.title}} </text>
+    </view>
+  </view>
+  -->
+
+  <!-- Menu bar -->
+  <view class='line'></view>
+  <view class="bar">
+    <view class="item">
+      <image src="/res/photo.png" bindtap="chooseImage" />
+    </view>
+    
+    <view class="item" wx:if="{{showVideo}}">
+      <image src="/res/video.png" bindtap="chooseVideo" />
+    </view>
+    <!--
+    <view class="item">
+      <image src="/res/link.png"  bindtap="chooseLink" />
+    </view>
+    -->
+  </view>
+
+  <!-- 选择位置 
+  <view>
+    <view class='line'></view>
+    <view class='horizontal' bindtap='clickLocation'>
+      <view></view>
+      <view class='tag-title'>{{location && location.name ? location.name: '所在位置'}}</view>
+      <image wx:if="{{location && location.name}}"
+        catchtap='clickDeleteLocation'
+        class='arrow_right' src="{{theme.images}}/clear.png"/>
+      <image wx:if="{{!location || !location.name}}"
+         class='arrow_right' src="{{theme.images}}/arrow_right.png"/>
+    </view>
+  </view>
+  -->
+  <!-- 选择话题 -->
+  <view wx:if="{{topic.items && topic.items.length > 0}}">
+    <view class='line'></view>
+    <view class='tag-title'>选择话题</view>
+    <view class='tag-list'>
+      <view class='tag'
+        bindtap='clickTag'
+        data-idx="{{index}}"
+        style="{{index == topic.selected? 'color:' +theme.tabColor+ ';border-color:'+theme.tabColor:''}}"
+        wx:for="{{topic.items}}" wx:for-item="item" wx:key="{{item}}"> {{item.text}} </view>
+    </view>
+  </view>
+</view>
+
+
+<view style="display:flex;flex:left;margin-top: 28rpx;">
+<!-- <button style='' 
+  class='btn-cancel' 
+  hover-class='btn-cancel-hover'
+  bindtap='writerCancel'>返回</button> -->
+
+<button style='' 
+  class='btn-submit' 
+  hover-class='btn-submit-hover'
+  bindtap='writerPublish'>提交</button>
+
+
+</view> 
+
+  </view>
+
+<!-- 链接编辑对话框 --->
+<linkdialog 
+  show="{{showDialog}}" 
+  title="输入链接地址" 
+  placeholder="请以http/https开头.." 
+  bind:onRequestClose="onRequestClose" 
+  bind:onSubmit="onDialogSubmit"
+  />

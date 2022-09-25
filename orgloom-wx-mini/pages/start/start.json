@@ -1,0 +1,11 @@
+
+{
+  "usingComponents": {
+    "kw-tab": "../tmpl/stabLeft/kw-tab",
+    "kw-login": "../tmpl/login/dialog",
+    "kw-loading": "../tmpl/loading/loading",
+    "kw-tab-top": "../tmpl/stabIndexStart/kw-tab"
+
+
+  }
+}

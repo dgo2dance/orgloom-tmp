@@ -1,0 +1,186 @@
+
+<!--
+<van-cell-group>
+  <van-field 
+  value="{{ value }}"
+  placeholder="请输入姓名"
+  border="{{ false }}"
+  label="姓名"
+  bind:change="onPersonNameChange"
+  required="true"
+/>
+</van-cell-group>
+
+<van-cell-group>
+  <van-field 
+  value="{{ value }}"
+  placeholder="请输入电话"
+  border="{{ false }}"
+  label="电话"
+  bind:change="onPersonPhoneChange"
+  required="true"
+/>
+</van-cell-group>
+-->
+<view class="con_input">
+<view class="weui-cell ">
+                <view class="weui-cell__hd">
+                    <view class="weui-label">昵称：</view>
+                </view>
+                <view class="weui-cell__bd">
+                    <input class="weui-input" name="Name" value="{{name}}" bindchange="setName" placeholder="请输入昵称"/>
+                </view>
+</view>
+
+<!--
+
+<view class="weui-cell ">
+                <view class="weui-cell__hd">
+                    <view class="weui-label">城市：</view>
+                </view>
+                <view class="weui-cell__bd">
+                  <picker mode="multiSelector" bindchange="bindMultiPickerChange" bindcolumnchange="bindMultiPickerColumnChange" value="{{multiIndex}}" range="{{multiArray}}">
+                    <view class="picker input-placeholder" wx:if='{{province.length === 0}}'>
+                        请选择城市
+                     </view>
+                  
+                      <view class="picker" wx:if='{{province.length > 0}}'>
+                        {{province}}，{{city}}
+                    </view>
+
+                  </picker>
+                 </view>
+</view>
+
+
+<view class="weui-cell ">
+                <view class="weui-cell__hd">
+                    <view class="weui-label">生日：</view>
+                </view>
+                <view class="weui-cell__bd">
+                    <picker mode="date" start="1900-01-01" end="2020-06-06" bindchange="handleDateChange">
+                            <input class="weui-input" name="birthData" disabled value="{{ birthData}}"  placeholder="请选择生日"></input>
+                        </picker>
+                </view>
+</view>
+
+
+    <view class="weui-cell">
+                                <view class="weui-cell__hd">
+
+                    <view class="weui-label">学历：</view>
+                    </view>
+
+                <view class="weui-cell__bd">
+                    <picker bindchange="bindCountryChange" value="{{typeIndex}}"  range="{{countries}}">
+                            <input class="weui-input" name="birthData" disabled value="{{countries[typeIndex]}}"  placeholder="请选择学历"></input>
+                    </picker>
+                </view>
+            </view>
+
+<view class="weui-cell ">
+                <view class="weui-cell__hd">
+                    <view class="weui-label">职业：</view>
+                </view>
+                <view class="weui-cell__bd">
+         <input class="weui-input" name="phone" value="{{job}}" bindchange="setJob" placeholder="请输入职业"/>
+               
+     
+               
+                </view>
+</view>
+
+
+<view class="weui-cell ">
+                <view class="weui-cell__hd">
+                    <view class="weui-label">交友节目：</view>
+                </view>
+                <view class="weui-cell__bd">
+            
+          <multi-selector class='selector' value='{{value}}' bindchange='bindSelectorChangeShow' bindmodalopen='onModalOpen' 
+               
+               placeholder='请选择交友节目' items='{{items}}' bindmodalclose='onModalClose' show-value='{{false}}'></multi-selector>
+               
+                </view>
+</view>
+
+<view class="weui-cell ">
+                <view class="weui-cell__hd">
+                    <view class="weui-label">期望对象：</view>
+                </view>
+                <view class="weui-cell__bd">
+              
+             <multi-selector class='selector' value='{{valuehe}}' bindchange='bindSelectorChangeYou' bindmodalopen='onModalOpen' 
+               
+               placeholder='请选择期望对象' items='{{itemshe}}' bindmodalclose='onModalClose' show-value='{{false }}'></multi-selector>
+       
+                </view>
+</view>
+-->
+<!--
+<view class="weui-cell ">
+                <view class="weui-cell__hd">
+                    <view class="weui-label">微信：</view>
+                </view>
+                <view class="weui-cell__bd">
+                    <input class="weui-input" name="phone" value="{{personDetail.phone}}" bindchange="setPhone" placeholder="请输入微信号"/>
+                </view>
+</view>
+
+
+<view class="weui-cell ">
+                <view class="weui-cell__hd">
+                    <view class="weui-label">QQ：</view>
+                </view>
+                <view class="weui-cell__bd">
+                    <input class="weui-input" name="phone" value="{{personDetail.phone}}" bindchange="setPhone" placeholder="请输入QQ号"/>
+                </view>
+</view>
+
+<view class="weui-cell ">
+                <view class="weui-cell__hd">
+                    <view class="weui-label">身高(cm)：</view>
+                </view>
+                <view class="weui-cell__bd">
+                    <input class="weui-input" name="phone" value="{{personDetail.phone}}" bindchange="setPhone" placeholder="请输入身高"/>
+                </view>
+</view>
+
+
+<view class="weui-cell ">
+                <view class="weui-cell__hd">
+                    <view class="weui-label">体重(kg)：</view>
+                </view>
+                <view class="weui-cell__bd">
+                    <input class="weui-input" name="phone" value="{{personDetail.phone}}" bindchange="setPhone" placeholder="请输入体重"/>
+                </view>
+</view>
+
+<view class="weui-cell-text ">
+                <view class="weui-cell__hd">
+                    <view class="weui-label">个人介绍：</view>
+                </view>
+                <view class="weui-cell__bd">
+                            <textarea class="weui-input" bindinput='textinput' placeholder="请输入介绍">
+
+
+                            </textarea>               
+  </view>
+</view>
+-->
+
+</view>
+
+
+
+
+
+<view class='share'>
+  <text>提交下一步</text>
+  <!--
+  <button open-type='share'></button>
+  -->
+  <button bindtap='submit'></button>
+
+</view>
+

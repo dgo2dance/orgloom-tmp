@@ -1,0 +1,59 @@
+@import "../../../../app.wxss";
+
+.tag-list {
+  margin-left: -14rpx; 
+  margin-right: -14rpx;
+  display: flex;
+  overflow: auto;
+}
+
+.tag-list::-webkit-scrollbar {
+  display: none;
+}
+
+.tag {
+  background: #f8f8f8;
+  border-radius: 8rpx;
+  font-size: 30rpx;
+  color: #888;
+  padding: 4rpx 24rpx;
+  margin: 6rpx 12rpx;
+  word-break: keep-all;
+}
+
+.ph {
+  padding: 0px 16rpx;
+  height: 1rpx;
+  background:white;
+}
+
+.more {
+  background: linear-gradient(90deg, rgba(255,255,255,0) 40%, white 60%);
+  position: absolute;
+  right: 0px; top: 0px;
+  height: 100%;
+  width: 100rpx;
+}
+
+.menu {
+  opacity: .7;
+  margin-left: auto;
+  width: 48rpx;
+  height: 48rpx;
+  align-self: flex-start;
+  margin-top: 8rpx;
+}
+
+.card {
+  border-radius: 8rpx;
+  font-size: 30rpx;
+  color: #888888;
+}
+
+.avatar-small {
+  width: 40rpx;
+  height: 40rpx;
+  min-width: 40rpx;
+  max-width: 40rpx;
+  border-radius: 50%;
+}

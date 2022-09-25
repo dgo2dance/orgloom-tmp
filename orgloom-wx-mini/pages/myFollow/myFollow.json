@@ -1,0 +1,11 @@
+
+{
+  "navigationBarTitleText": "光迹",
+  "enablePullDownRefresh": false,
+  "usingComponents":
+  {
+    "panel": "/components/panel/index",
+    "kw-login": "../tmpl/login/dialog"
+
+  }
+}

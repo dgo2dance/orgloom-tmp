@@ -1,0 +1,273 @@
+/* pages/post/posts.wxss */
+@import "../../pages/tmpl/wxParse/wxParse.wxss";
+
+.h1 {
+  margin-bottom: 16rpx;
+  font-size: 48rpx;
+  font-weight: bold;
+}
+
+.h2 {
+  margin-bottom: 16rpx;
+  font-size: 36rpx;
+  font-weight: 450;
+}
+
+
+.rich-img {
+  max-width: 100%;
+  margin: 0px auto;
+}
+
+.comment {
+  display: flex;
+  align-items: top;
+}
+
+.menu {
+  opacity: .7;
+  margin-left: auto;
+  width: 56rpx;
+  height: 56rpx;
+  align-self: start;
+}
+
+.comment .nickname {
+  font-size: 28rpx;
+  color:#222;
+}
+
+.comment .detail {
+  font-size: 32rpx;
+  color: #333;
+}
+
+.comment .image {
+  width: 50vw;
+  margin-top: 12px;
+  border-radius: 6rpx;
+}
+
+.reply {
+  padding: 14rpx 20rpx; 
+  margin-top: 8rpx;
+  font-size: 30rpx;
+}
+
+.reply .nickname {
+  color:#576b95;
+  font-weight: 650;
+}
+
+.reply .detail {
+  color:#333;
+  font-size: 30rpx;
+}
+
+.itemwrapper {
+  margin-bottom: 16rpx;
+}
+
+.img {
+  width: 100%;
+  border-radius: 6rpx;
+}
+
+.video {
+  width: 100%;
+  border-radius: 6rpx;
+}
+
+.good_btn {
+  font-size: 32rpx;
+  color: #576b95;
+}
+
+.input_null{
+  color: #C9C9C9;
+}
+
+.bottom-bar {
+  border-top: 1rpx solid #f0f0f0;
+  height: 112rpx;
+  background-color: white;
+  position: fixed;
+  bottom: 0px;
+  width: 100%;
+  z-index: 997;
+  display: flex;
+  align-items: center;
+}
+
+.bottom-bar image {
+  width: 54rpx;
+  height: 54rpx;
+}
+
+.bottom-bar .left {
+  display:flex;
+  justify-content: center; 
+  width: 120rpx;
+}
+
+.bottom-bar .middle {
+  background-color:#f8f8f8;
+  border-radius: 28rpx;
+  padding: 14rpx 28rpx;
+  flex: 1;
+  font-size: 26rpx;
+  color: #888888;
+}
+
+.bottom-bar .right {
+  display:flex;
+  justify-content: center; 
+  align-items: center;
+  width: 180rpx;
+}
+
+.input {
+  box-sizing: border-box;
+  position: fixed;
+  bottom: 0;
+  left: 0; right: 0;
+  z-index: 1000;
+  background: #fff;
+  padding: 12rpx 30rpx;
+}
+
+.input .hint {
+  font-size: 24rpx;
+  color: #959595;
+}
+
+.input .hint text {
+  font-size: 26rpx;
+  color: #333;
+  font-weight: 500;
+}
+
+.input input {
+  margin: 12rpx 0rpx;
+  width: 650rpx;
+  /* 使用padding与预期留白不一致，故使用border */
+  border-width: 15rpx 20rpx;
+  border-style: solid;
+  border-color:  #f8f8f8;
+  font-size: 30rpx;
+  background-color: #f8f8f8;
+  border-radius: 6rpx;
+}
+
+.input .send {
+  margin-top: 6rpx;
+  width: 100%;
+  display: flex;
+  align-items: center;
+  height: 64rpx;
+}
+
+.input .send image {
+  width: 48rpx;
+  height: 48rpx;
+  margin-right: 32rpx;
+}
+
+.input .send .del {
+  background: #ccc;
+  border-radius: 50%;
+  padding: 6rpx;
+  width: 32rpx;
+  height: 32rpx;
+}
+
+.input .send button {
+  margin-left: auto;
+  background: transparent;
+  color: white;
+  font-size: 32rpx;
+  padding: 6rpx 4rpx;
+  border-radius: 30rpx;
+}
+
+.share {
+  margin-left: 20rpx;
+}
+
+.bg-mask {
+  position: fixed; 
+  top: 0px; left: 0px; right: 0px; bottom: -1000px;
+  z-index: 998;
+  /*background-color: #777;     
+  opacity:0.5; 
+  -moz-opacity:0.5;*/
+  background-color: rgba(0, 0, 0, .6);
+}
+
+.empty {
+  width: 100%;
+  height: 300rpx;
+  display: flex;
+  align-items: center;
+}
+
+.empty view {
+  width: 100%;
+  color: #C9C9C9;
+  font-size: 32rpx;
+  text-align: center;
+}
+
+.goto-home {
+  position: fixed;
+  bottom: 160rpx;
+  right: 25rpx;
+  width: 100rpx;
+  height: 100rpx;
+  border-radius: 50%;
+  color: white;
+  box-shadow: 0 10px 15px -3px rgba(0, 0, 0, 0.1), 0 4px 6px -2px rgba(0, 0, 0, 0.05);
+  word-break: keep-all;
+  font-size: 32rpx;
+}
+
+.share-to {
+  margin: 54rpx auto 24rpx auto;
+  display: flex;
+  flex-direction: column;
+  align-items: center;
+  justify-content: center;
+}
+
+.share-to .tips {
+  color: #999;
+  font-size: 28rpx;
+  margin-bottom: 18rpx;
+}
+
+.share-to image {
+  width: 42rpx;
+  height: 42rpx;
+  margin-left: 12rpx;
+}
+
+.share-to .btn {
+  background: white;
+  /* box-shadow:0px 0px 8rpx #ddd; */
+  border-radius: 38rpx;
+  font-size: 30rpx;
+  padding: 8rpx 24rpx;
+  border: 1px solid #eee;
+}
+
+.title {
+  font-size: 37rpx;
+  color: #666666;
+}
+
+
+.content{
+  font-size: 30rpx;
+  color: #888888;
+  margin-top: 25rpx;
+}

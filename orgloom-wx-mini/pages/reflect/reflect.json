@@ -1,0 +1,8 @@
+{
+  "usingComponents": {
+    "kw-login": "../tmpl/login/dialog",
+    "panel": "/components/panel/index"
+
+
+  }
+}

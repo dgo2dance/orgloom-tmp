@@ -1,0 +1,8 @@
+{
+  "navigationBarTitleText": "光迹",
+  "usingComponents": {
+    "multi-selector": "/components/multiSelector/multiSelector",
+    "kw-login": "../tmpl/login/dialog"
+
+  }
+}

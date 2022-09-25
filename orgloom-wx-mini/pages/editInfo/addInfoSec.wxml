@@ -1,0 +1,90 @@
+
+<!--
+<van-cell-group>
+  <van-field 
+  value="{{ value }}"
+  placeholder="请输入姓名"
+  border="{{ false }}"
+  label="姓名"
+  bind:change="onPersonNameChange"
+  required="true"
+/>
+</van-cell-group>
+
+<van-cell-group>
+  <van-field 
+  value="{{ value }}"
+  placeholder="请输入电话"
+  border="{{ false }}"
+  label="电话"
+  bind:change="onPersonPhoneChange"
+  required="true"
+/>
+</van-cell-group>
+-->
+<view class="con_input">
+    <!--
+<view class="weui-cell ">
+                <view class="weui-cell__hd">
+                    <view class="weui-label">微信：</view>
+                </view>
+                <view class="weui-cell__bd">
+                    <input class="weui-input" name="phone" value="{{wechat}}" bindchange="setWx" placeholder="请输入微信号"/>
+                </view>
+</view>
+
+
+<view class="weui-cell ">
+                <view class="weui-cell__hd">
+                    <view class="weui-label">QQ：</view>
+                </view>
+                <view class="weui-cell__bd">
+                    <input class="weui-input" name="phone" value="{{qq}}" bindchange="setQq" placeholder="请输入QQ号"/>
+                </view>
+</view>
+
+<view class="weui-cell ">
+                <view class="weui-cell__hd">
+                    <view class="weui-label">身高(cm)：</view>
+                </view>
+                <view class="weui-cell__bd">
+                    <input class="weui-input" name="phone" value="{{height}}" bindchange="setHeight" placeholder="请输入身高"/>
+                </view>
+</view>
+
+
+<view class="weui-cell ">
+                <view class="weui-cell__hd">
+                    <view class="weui-label">体重(kg)：</view>
+                </view>
+                <view class="weui-cell__bd">
+                    <input class="weui-input" name="phone" value="{{weight}}" bindchange="setWeight" placeholder="请输入体重"/>
+                </view>
+</view>
+
+<view class="weui-cell-text ">
+                <view class="weui-cell__hd">
+                    <view class="weui-label">个人介绍：</view>
+                </view>
+                <view class="weui-cell__bd">
+                            <textarea class="weui-input" bindinput="setmyDesc" value="{{mydesc}}" placeholder="请输入介绍">
+
+                            </textarea>               
+  </view>
+</view>
+-->
+</view>
+
+
+
+
+
+<view class='share'>
+  <text>提交保存</text>
+  <!--
+  <button open-type='share'></button>
+  -->
+  <button bindtap='submit'></button>
+
+</view>
+

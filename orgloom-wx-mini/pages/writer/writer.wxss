@@ -1,0 +1,290 @@
+/* pages/writer/writer.wxss */
+.text-input {
+ height: 200rpx;
+ width: 100%;
+ min-height: 200rpx;
+ max-height: 300rpx;
+ z-index: 998;
+ font-size: 32rpx;
+}
+.input-input{
+  height: 150rpx;
+  min-height: 150rpx;
+  font-size: 32rpx;
+
+}
+
+/* show delete button at right|top corner */
+.box {
+  box-sizing: border-box;
+  position: relative;
+}
+
+.box .del {
+  position:absolute;
+  top: -21rpx;
+  right: -21rpx;
+  width: 42rpx;
+  height: 42rpx;
+  border-radius: 50%;
+  background: rgba(0, 0, 0, .3);
+  z-index: 1000;
+  display: flex;
+  align-items: center;
+  justify-content: center;
+}
+
+.box .del image {
+  width: 32rpx;
+  height: 32rpx;
+}
+
+.bar {
+  display: flex;
+  align-items: center;
+}
+
+.bar .item {
+  margin: 0px 16rpx;
+  padding: 0px;
+}
+.bar .item:hover {
+  background: #eee
+}
+
+.bar image {
+  vertical-align: middle;
+  width: 56rpx;
+  height: 56rpx;
+  padding: 8rpx 8rpx;
+}
+
+/* button */
+.btn-submit {
+  width: 99%;
+  color: #fff;
+}
+
+.btn-submit-hover {
+  width: 99%;
+  color: #fff;
+  opacity: .6;
+}
+
+.btn-cancel {
+  width: 86%;
+  background-color: #f8f8f8;
+  color:gray;
+}
+
+.btn-cancel-hover {
+  width: 86%;
+  background-color: #f7f7f7;
+  color:gray;
+}
+
+/* image content */
+.image-list {
+  display: flex;
+  flex-wrap: wrap;
+}
+
+.thumb {
+  width: 28vw;
+  height: 28vw;
+  margin: 6rpx;
+}
+
+.thumb image {
+  width: 100%;
+  height: 100%;
+}
+
+.add {
+  background: #f8f8f8;
+  width: 28vw;
+  height: 28vw;
+  margin: 6rpx;
+  display: flex;
+  justify-content: center;
+  align-items: center;
+}
+
+.add image {
+  width: 40%;
+  height: 40%;
+}
+
+/* tag */
+.tag-title {
+  font-size: 32rpx;
+  margin: 6rpx 0;
+}
+
+.tag-list {
+  margin-left: -14rpx; 
+  display: flex;
+  flex-wrap: wrap;
+}
+
+.tag {
+  border: 1px solid lightgray;
+  border-radius: 2px;
+  font-size: 32rpx;
+  color: gray;
+  padding: 6rpx 16rpx;
+  margin: 6rpx 16rpx;
+  word-break: keep-all;
+}
+
+.arrow_right {
+  margin-left: auto;
+  width: 48rpx; 
+  height: 48rpx;
+  min-width: 48rpx;
+  max-width: 48rpx;
+}
+
+/* video */
+.video {
+  width: 60vw;
+  height: 60vw;
+}
+
+.video video {
+  width: 100%;
+  height: 100%;
+  z-index: 999;
+}
+
+/* link */
+.link {
+  background: #f8f8f8;
+  display: flex;
+  align-items: center;
+  padding: 12rpx;
+}
+
+.link image {
+  min-width: 90rpx;
+  width: 90rpx;
+  height: 90rpx;
+  margin-right: 8rpx;
+  box-sizing: border-box;
+  padding: 14rpx;
+}
+
+.link text {
+  color: #333;
+  font-size: 30rpx;
+  line-height: 32rpx;
+}
+
+
+
+
+.btn-cancel{
+  color: #756a6a;
+  width: 25%;
+  height: 80rpx;
+  line-height: 80rpx;
+  border: solid 2rpx  #979498; 
+  border-radius:20px;   
+  font-size: 30rpx;     
+  text-align: center;
+  
+}
+
+.btn-submit{
+
+  color: rgb(255, 255, 255);
+  width: 95%;
+  height: 80rpx;
+  line-height: 80rpx;
+  border: solid 2rpx  #3260f8;
+  border-radius:20px;   
+  font-size: 30rpx;     
+  text-align: center;
+  background-color: #3260f8;
+  
+}
+
+.content{
+  padding: 0px 20px 20px 20px;
+}
+
+
+.top_contain {
+  display: flex;
+  flex-direction: column;
+  padding: 0rpx  180rpx 0rpx 180rpx;
+  margin-top: 0rpx;
+  box-sizing: border-box;
+/*     justify-content: center; */
+  background-color: #fff;
+  margin-bottom: 30rpx;
+  width: 100%;
+}
+ec-canvas {
+  width: 100%;
+  height: 30%;
+}
+
+.top_img {
+  width: 100%;
+  display: flex;
+  justify-content: center;
+}
+
+.top_img image {
+  width: 200rpx;
+  height: 200rpx;
+}
+
+
+.list_word {
+  display: flex;
+  flex-direction: row;
+  width: 100%;
+  box-sizing: border-box;
+  justify-content: center;
+  margin: 0rpx 10rpx 10rpx 10rpx;
+
+}
+
+.list_title {
+  width: 100%;
+  font-size: 32rpx;
+  letter-spacing: 3rpx;
+  line-height: 45rpx;
+}
+
+
+.list_author_first {
+  padding: 10rpx 15rpx 3rpx 15rpx;
+  font-size: 36rpx;
+  letter-spacing: 3rpx;
+  line-height: 40rpx;
+  color: rgb(9, 9, 9);
+  text-align: center;
+
+
+}
+.list_author {
+  padding: 10rpx 15rpx 3rpx 15rpx;
+  font-size: 32rpx;
+  letter-spacing: 3rpx;
+  line-height: 40rpx;
+  color: rgb(129, 129, 129);
+  margin-left: 6px;
+  word-break: break-all;
+
+}
+.list_tag{
+/*   display: flex;
+  flex-direction: row;
+  */
+
+}
+
+

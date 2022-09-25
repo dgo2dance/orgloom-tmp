@@ -1,0 +1,97 @@
+<!-- pages/components/mytree/mytree.wxml-->
+<view>
+  <view wx:if='{{ isGetData }}'>
+  
+   <!-- <text bindtap='tapItem' data-itemid='{{ model.id }}'>{{ model.name }}  {{ model.positionName }}  {{model.tags}}</text>-->
+    <view class="card">
+
+           <view class="paren" wx:if="{{top}}">
+            <view class="left-paren">
+            </view>
+            <view class="right-paren">
+            </view>
+
+
+          </view>
+
+
+                       <!-- <ad unit-id="adunit-9fc33944cf12b67a"></ad> -->
+
+
+
+
+          <view class='card-item  {{item.checked ? "active" : ""}}' wx:for='{{model}}' wx:key='id' wx:for-item="item" data-id='{{item.id}}' bindtap='clickPerson'>
+                      
+
+
+                      <view class='weui-cell ui-booklist-card' hover-class="ui--active" >
+                        <!--   <text wx:if='{{ isBranch }}' bindtap='toggle'>{{ open ? '[ - ]' : '[ + ]' }} </text> 
+                          <text wx:else>[ · ] </text>  -->
+                        <image class="ui-booklist-card__img" src="{{item.profileIcon || company.logoIcon}}" mode="aspectFill"></image>
+                        <view class="ui-booklist-card__info">
+                          <view class="ui-booklist-card__info-title font-black-34">{{item.name}}</view>
+                          <view class="font-gray-26">
+                          {{ item.positionName }}  </view> 
+                        </view>
+
+                      </view>
+
+                        <view class='bottom-button {{item.checked ? "button-active" : ""}}' data-path='{{item.path}}' catchtap='clickButton'>
+                        <view class="bottom-button-content">
+                          {{item.childrenCount}}
+
+                          <span class='arrow {{item.checked ? "arrow-bottom" : "arrow-top"}}'> </span>
+
+                          <!-- <div class="arrow"></div> -->
+                        </view>
+                    </view>  
+
+
+          </view>
+
+          <view class="card-item-s" bindtap='clickAddPerson'>
+            <view class="con">  <image style="width: 20px;height: 20px;" src="/images/add.png"> </image>
+            </view>
+          <!--  <view style="font-size:10px;"> 添加人员  </view> -->
+          </view>
+
+        </view>
+
+  </view>
+
+   <view wx:for='{{model}}'  wx:for-item="e" wx:for-index="e_index" wx:key="e_index">
+
+        <view style='padding-top: 15rpx;' wx:if='{{e.children.length>0||e.checked}}' >
+          <!-- <view class="paren">
+            <view class="left-paren">
+            </view>
+            <view class="right-paren">
+            </view>
+          </view> -->
+          <!-- <view>{{e.name}} </view>  -->
+           <mytree  id='myTree' idFlag='{{idFlag}}' model='{{e.children}}' company='{{company}}' parent='{{e}}' top="{{true}}" 
+            style="font-size: 16px;color: #111;"></mytree>
+          
+
+              <!-- <view class="card-item-s" bindtap='clickAddPerson' wx:if="{{!e.children}}">
+
+
+                <view class="con">  <image style="width: 20px;height: 20px;" src="/images/add.png"> </image>
+                </view>
+              </view> -->
+      <!--  <view style="font-size:10px;"> 添加人员  </view> -->
+
+
+          <!--
+          <mytree wx:for='{{ e.children }}' wx:key='sitem_index' wx:for-item="sitem" wx:for-index="sitem_index" model='{{ sitem}}'></mytree>
+          -->
+        </view>
+
+
+  </view>
+  
+</view>
+
+
+<!-- 登录对话框 -->
+<kw-login class="login" />

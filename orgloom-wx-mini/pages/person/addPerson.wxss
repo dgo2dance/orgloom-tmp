@@ -1,0 +1,423 @@
+/*科室排班表  */
+
+@import "../../utils/weui.wxss";
+@import "../../utils/index.wxss";
+
+.table{
+  display: inline-flex;
+  flex-direction: column;
+  border: 1rpx solid rgba(218, 217, 217, 1);
+  border-bottom: 0;  
+}
+
+.scrollClass {
+  display: flex;
+  width: 100%;
+  white-space: nowrap;
+  margin-top: 23px;
+  height: 100%;
+  background-color: white;
+}
+
+.table_header {
+  display: inline-flex;
+}
+
+.th {
+  display: flex;
+  flex-direction: column;
+  width: 89rpx;
+  height: 89rpx;
+  background: rgba(241, 252, 255, 1);
+  border-right: 1rpx solid rgba(218, 217, 217, 1); 
+  border-bottom: 1rpx solid rgba(218, 217, 217, 1); 
+  justify-content: center;
+  align-items: center;
+  overflow-x: auto;
+}
+.cell_label{
+  font-size: 26rpx;
+  color: rgba(74, 74, 74, 1);
+}
+.cell_date_label{
+  font-size: 20rpx;
+  color: rgba(74, 74, 74, 1);
+}
+.table_main {
+  display: inline-flex;
+  flex-direction: row;
+}
+.right-item{
+  display: flex;
+  flex-direction: row;
+}
+.td {
+  display: flex;
+  flex-direction: column;
+  width: 89rpx;
+  /* height: 90rpx; */
+  background: white;
+  justify-content: center;
+  align-items: center;
+  border: 1rpx solid rgba(200, 200, 200, 0.5);
+  border-top: 0;
+  border-left:0; 
+}
+
+.table_Text_class {
+  display: flex;
+  justify-content: center;
+  align-items: center;
+  height: 60rpx;
+  font-size: 30rpx;
+  color: rgba(55, 134, 244, 1);
+  width: 100%;
+  word-break: normal;
+  border-bottom: 1rpx solid rgba(218, 217, 217, 1);
+}
+.table_Text_last_class{
+  display: flex;
+  justify-content: center;
+  align-items: center;
+  height: 60rpx;
+  font-size: 30rpx;
+  color: rgba(55, 134, 244, 1);
+  width: 100%;
+  word-break: normal;
+
+}
+.pop-row-first{
+margin-right: 50px;
+height: 120rpx;
+line-height: 10rpx;
+
+}
+.header-cell{
+  text-align:center;
+}
+
+.container{
+  
+  margin:5rpx;
+}
+
+.dark,
+.light {
+  color: #fff;
+  font-size: 13px;
+  line-height: 30px;
+  text-align: center;
+  margin-bottom: 10px;
+  background-clip: content-box;
+}
+
+.dark {
+  background-color: #39a9ed;
+}
+
+.light {
+  background-color: #66c6f2;
+}
+.tt{
+  
+  height: 160rpx;
+
+}
+
+
+
+.weui-label {
+    font-size: 32rpx!important; 
+    }
+
+.share{
+   background-color: #37a3fd;
+   height: 100rpx;
+}
+
+.weui-input {
+  font-size: 32rpx!important;
+  
+  }
+
+.con_input {
+  margin: 30rpx 30rpx 30rpx 30rpx;
+  padding-bottom: 100px;
+}
+
+.picker{
+  font-size: 32rpx;
+}
+
+.weui-cell {
+  padding: 10px!important;
+}  
+
+ textarea{
+  height:100px!important;
+  width: 100%;
+ }
+ 
+.botsum{
+  font-size: 32rpx;
+  color: #aaaaaa;
+}
+
+.weui-cell-text{
+  display: flex;
+  flex-direction:column;
+  padding: 0 10px 5px 10px!important;
+
+} 
+
+.weui-cell-text:before {
+  content: " ";
+  position: absolute;
+  left: 0;
+  top: 0;
+  right: 0;
+  height: 1px;
+  border-top: 1rpx solid rgba(0,0,0,.1);
+  color: rgba(0,0,0,.1);
+  left: 16px;
+  
+  }
+
+  .selector{
+    height: 60rpx;
+    width: 100%;
+   /* border: 1px solid #eee;
+    border-radius: 5rpx;
+    */
+  }
+
+  .input-placeholder {
+    font-size: 30rpx;
+    line-height: 50rpx;
+    color: #9b9b9b;
+    
+    }
+
+    .submit-button{
+      margin-left: 20rpx;
+      color: rgb(255, 255, 255);
+      width: 100%;
+      height: 80rpx;
+      float: right;
+      line-height: 80rpx;
+      border: solid 2rpx  #3260f8;
+      border-radius:20px;   
+      font-size: 30rpx;     
+      text-align: center;
+      background-color: #3260f8;
+      margin-bottom: 20px;
+
+    }
+
+    .weui-cell:before {
+    
+      border-top-width: 0px!important;
+    }
+    
+    .detail_card{
+
+      margin-bottom: 15px;
+    }
+
+
+
+/* show delete button at right|top corner */
+.box {
+  box-sizing: border-box;
+  position: relative;
+}
+
+.box .del {
+  position:absolute;
+  top: -21rpx;
+  right: -21rpx;
+  width: 42rpx;
+  height: 42rpx;
+  border-radius: 50%;
+  background: rgba(0, 0, 0, .3);
+  z-index: 1000;
+  display: flex;
+  align-items: center;
+  justify-content: center;
+}
+
+.box .del image {
+  width: 32rpx;
+  height: 32rpx;
+}
+
+.bar {
+  display: flex;
+  align-items: center;
+}
+
+.bar .item {
+  margin: 0px 16rpx;
+  padding: 0px;
+}
+.bar .item:hover {
+  background: #eee
+}
+
+.bar image {
+  vertical-align: middle;
+  width: 56rpx;
+  height: 56rpx;
+  padding: 8rpx 8rpx;
+}
+
+/* button */
+.btn-submit {
+  width: 86%;
+  color: #fff;
+}
+
+.btn-submit-hover {
+  width: 86%;
+  color: #fff;
+  opacity: .6;
+}
+
+.btn-cancel {
+  width: 86%;
+  background-color: #f8f8f8;
+  color:gray;
+}
+
+.btn-cancel-hover {
+  width: 86%;
+  background-color: #f7f7f7;
+  color:gray;
+}
+
+/* image content */
+.image-list {
+  display: flex;
+  flex-wrap: wrap;
+}
+
+.thumb {
+  width: 28vw;
+  height: 28vw;
+  margin: 6rpx;
+}
+
+.thumb image {
+  width: 100%;
+  height: 100%;
+}
+
+.add {
+  background: #f8f8f8;
+  width: 28vw;
+  height: 28vw;
+  margin: 6rpx;
+  display: flex;
+  justify-content: center;
+  align-items: center;
+}
+
+.add image {
+  width: 40%;
+  height: 40%;
+}
+
+/* tag */
+.tag-title {
+  font-size: 32rpx;
+  margin: 6rpx 0;
+}
+
+.tag-list {
+  margin-left: -14rpx; 
+  display: flex;
+  flex-wrap: wrap;
+}
+
+.tag {
+  border: 1px solid lightgray;
+  border-radius: 2px;
+  font-size: 32rpx;
+  color: gray;
+  padding: 6rpx 16rpx;
+  margin: 6rpx 16rpx;
+  word-break: keep-all;
+}
+
+.arrow_right {
+  margin-left: auto;
+  width: 48rpx; 
+  height: 48rpx;
+  min-width: 48rpx;
+  max-width: 48rpx;
+}
+
+/* video */
+.video {
+  width: 60vw;
+  height: 60vw;
+}
+
+.video video {
+  width: 100%;
+  height: 100%;
+  z-index: 999;
+}
+
+/* link */
+.link {
+  background: #f8f8f8;
+  display: flex;
+  align-items: center;
+  padding: 12rpx;
+}
+
+.link image {
+  min-width: 90rpx;
+  width: 90rpx;
+  height: 90rpx;
+  margin-right: 8rpx;
+  box-sizing: border-box;
+  padding: 14rpx;
+}
+
+.link text {
+  color: #333;
+  font-size: 30rpx;
+  line-height: 32rpx;
+}
+
+
+
+
+.btn-cancel{
+  margin-top: 30px;
+  color: #756a6a;
+  width: 80%;
+  height: 80rpx;
+  line-height: 80rpx;
+  border: solid 2rpx  #979498; 
+  border-radius:20px;   
+  font-size: 30rpx;     
+  text-align: center;
+  
+}
+
+.btn-submit{
+
+  color: rgb(255, 255, 255);
+  width: 80%;
+  height: 80rpx;
+  line-height: 80rpx;
+  border: solid 2rpx  #3260f8;
+  border-radius:20px;   
+  font-size: 30rpx;     
+  text-align: center;
+  background-color: #3260f8;
+  
+}

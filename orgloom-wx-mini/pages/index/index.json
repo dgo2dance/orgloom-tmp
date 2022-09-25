@@ -1,0 +1,13 @@
+
+{
+  "navigationBarTitleText": "光迹",
+  "enablePullDownRefresh": true,
+  "usingComponents":
+  {
+    "panel": "/components/panel/index",
+    "kw-tab": "../tmpl/stabIndex/kw-tab",
+    "kw-login": "../tmpl/login/dialog",
+    "userlist": "./comps/userlist/userlist",
+    "postlist": "./comps/postlist/postlist"
+  }
+}

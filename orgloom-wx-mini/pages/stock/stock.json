@@ -1,0 +1,13 @@
+{
+  "usingComponents": {
+    "mytree": "./mytree/mytree",
+    "kw-login": "../tmpl/login/dialog",
+    "postlist": "./comps/postlist/postlist",
+    "subjectlist": "./comps/subjectlist/postlist",
+    "van-notice-bar": "/miniprogram_npm/@vant/weapp/notice-bar/index",
+    "van-icon":"/miniprogram_npm/@vant/weapp/icon/index",
+    "van-popup": "/miniprogram_npm/@vant/weapp/popup/index"
+
+
+  }
+}

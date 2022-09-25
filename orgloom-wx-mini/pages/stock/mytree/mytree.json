@@ -1,0 +1,8 @@
+{
+  "component": true,
+  "usingComponents": {
+    "mytree": "../mytree/mytree",
+    "kw-login": "../../tmpl/login/dialog"
+
+  }
+}

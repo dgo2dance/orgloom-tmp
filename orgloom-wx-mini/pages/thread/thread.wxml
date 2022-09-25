@@ -1,0 +1,268 @@
+<!-- 插屏广告
+<kw-adver type="detail_inters" />
+ -->
+<import alt="微信小程序中显示html格式内容的方法" src="../tmpl/wxParse/wxParse.wxml"/>
+
+<!-- 内容 -->
+<view class="card" style='z-index:1;padding: 48rpx 48rpx;'>
+  <view class="horizontal">
+    <image class='avatar-large' style='margin-right: 18rpx;'
+      src="{{item.post.author.avatar?item.post.author.avatar: theme.images+'/user_icon.png'}}" 
+      bindtap="clickPostAvatar"
+      />
+    <view>
+      <view class='title b5'>{{item.userName}}
+      <text wx:if="{{item.post.author.admin_label}}" 
+          class="user-label"
+          style="background:{{theme.adminColor}}; opacity: .9"
+        >管理员</text>
+      <text wx:if="{{item.post.author.level_label}}" 
+          class="user-label" 
+          style="background:{{theme.levelColor}}; opacity: .8"
+        >{{item.post.author.level_label}}</text> 
+      </view>
+      <view class='subtitle'>{{item.createTime}}</view>
+    </view>
+    <image class='menu' src="/res/down.png" catchtap='clickMenu' data-idx='{{index}}' />
+  </view>
+  <view style='margin-top:18rpx;'>
+    <!-- Text -->
+      <view class="title">
+      <kw-text text="{{item.title}}" limit="{{2000}}" selectable="{{true}}"></kw-text>
+      </view>
+      <view class="content">
+      <!-- <kw-text text="{{item.allContents||item.contents}}" limit="{{8000}}" selectable="{{true}}"></kw-text> -->
+          <!-- <image  referrerPolicy="no-referrer"  src="https://images.weserv.nl/?url=https://pics1.baidu.com/feed/14ce36d3d539b60077f02dedd6308d20c65cb71c.jpeg" catchtap='clickMenu' data-idx='{{index}}' />
+
+      -->
+     <template is="wxParse" data="{{wxParseData:article.nodes}}"/>
+
+      </view>
+
+  
+  <!--    <view wx:if="{{!item.post.rich && !item.post.goods}}" class="itemwrapper">
+      <kw-text text="{{item.post.content}}" limit="{{2000}}" selectable="{{true}}"></kw-text>
+    </view>
+    -->
+
+    <!-- Rich Text -->
+    <view wx:if="{{item.post.rich}}" class="itemwrapper">
+      <view class="h1">{{item.post.title}}</view>
+      <rich-text nodes="{{item.post.nodes}}" />
+    </view>
+    
+    <!-- images -->
+    <view wx:if="{{item.images}}" class="itemwrapper">
+      <view wx:for="{{item.images}}" wx:for-item="item" wx:key="{{id}}" >
+        <image catchtap="clickImage" data-idx="{{index}}" src="{{item.imageIcon}}" mode='widthFix' class="img"
+        
+        catchtap='clickImage' 
+          data-src="{{item.imageIcon}}"
+          />
+      </view>
+    </view> 
+
+    <!-- 视频 -->
+    <view wx:if="{{item.post.video}}" class="itemwrapper">
+      <video style="height:{{videoHeight}}"
+        class='video' src="{{item.post.video.video}}" 
+        object-fit="contain" 
+        controls="true"
+        autoplay='{{true}}'
+        show-center-play-btn="{{false}}" />
+    </view>
+
+    <!-- 链接 -->
+    <view wx:if="{{item.post.link}}" class="itemwrapper">
+      <kw-link link="{{item.post.link}}" />
+    </view>
+
+    <!-- 推广物品 -->
+    <view wx:if="{{item.post.goods}}" class="itemwrapper">
+      <view class="h2">{{item.post.goods.title}}</view>
+      <block wx:for="{{item.post.goods.images}}" wx:for-item="path" wx:key="path" >
+        <image bindtap="clickImage" data-idx="{{index}}" src="{{path}}" mode='widthFix' class="img"/>
+      </block>
+       <view class="good_btn" bindtap="clickGoods" >{{item.post.content}}</view>
+    </view>
+
+    <!-- 地理位置 -->
+    <block wx:if="{{item.post.location && item.post.location.name}}">
+      <location location="{{item.post.location}}"/>
+    </block>
+  </view>
+  <view class="share-to">
+    <view class="tips">- 好内容，分享一下-</view>
+    <view style="display:flex;">
+      <button open-type='share' class='btn-clear .btn'>
+      <image src="/res/wechat.png"/> 分享好友
+      </button>
+      <!--
+      <view style="width:24rpx;" />
+      <button bindtap="sharePoster" class='btn-clear .btn'>
+      分享海报<image src="/res/wx_moment.png"/>
+      </button>
+      -->
+    </view>
+  </view>
+</view>
+
+<kw-adver type="detail_banner"/>
+
+<ad unit-id="adunit-9fc33944cf12b67a"></ad>
+<!-- <ad unit-id="adunit-ba89959a1b5ac256" ad-type="video" ad-theme="white"></ad> -->
+<view style='margin-bottom:9rpx;'/>
+
+
+<view class="card">
+  <view style="font-weight:500">
+    <text style='margin-right:18rpx;'>评论 {{item.post.stats.comments}}</text>
+  <!--  <text style='margin: auto;'>赞 {{item.post.stats.favors}}</text>  -->
+  </view>
+  <view class='line' />
+
+  <!-- Comment List -->
+  <view wx:for="{{comments}}" wx:for-item="item" wx:key="id">
+    <view wx:if="{{index != 0}}" class='line' style='margin-left:112rpx;'></view>
+    <view class="comment">
+      <image class="avatar-large" style='margin-right:18rpx;'
+        src="{{item.author.avatar?item.author.avatar: theme.images+'/user_icon.png'}}" 
+        bindtap="clickCommentAvatar"
+        data-idx="{{index}}"
+        />
+      <view style='width:100%;' data-idx="{{index}}-{{sub}}" bindtap='clickListCommentAction'>
+        <!-- Reply user name and content-->
+        <view class='nickname'>
+          {{
+            item.userName? item.userName: '匿名' 
+          }}
+        </view>
+        <view class='detail'>{{item.contents}}</view>
+        <image wx:if="{{item.imageIcon}}" 
+          class="image"
+          mode="widthFix"
+          src="{{item.imageIcon}}"
+          
+        />
+    
+        <!-- Reply List / Comment on Comment  -->
+        <view wx:if='{{item.replys.length>0}}' class='gray-bg reply'>
+          <view
+            wx:for="{{item.replys}}" 
+            wx:for-item="item"
+            wx:key="{{item.id}}"
+            wx:for-index="sub"
+            data-idx="{{index}}-{{sub}}"
+            catchtap='clickListCommentAction'
+            >
+            <text class='nickname'>{{item.userName||'匿名'}}</text>
+            <text wx:if="{{item.targetUserName}}">回复</text>
+            <text wx:if="{{item.targetUserName}}" class='nickname'>{{item.targetUserName||'匿名'}}</text>
+            <text class='detail'>: {{item.contents}}</text>
+          </view>
+        </view>
+
+        <!-- Comment and Favor bar-->
+        <view class='flow-right' style='margin-top:9rpx;'>
+          <!-- date -->
+          <view class='subtitle' style='margin-right:auto;'>{{item.time}}</view>
+
+          <!-- Comment -->
+          <view class='img-text' style='margin-right:18rpx'
+                catchtap='clickListComment' 
+                data-idx="{{index}}"
+                data-id="{{item.id}}"
+                data-userId="{{item.userId}}">
+            <image style="width:42rpx; height:42rpx" src='{{theme.images}}/comment.png'></image>
+          </view>
+
+          <!-- Favor -->
+          <view catchtap="clickListFavor" data-idx="{{index}}">
+            <kw-like favored="{{item.stats.favored}}" favors="{{item.stats.favors}}" />  
+          </view>        
+        </view>
+      </view>
+    </view>
+
+
+  </view>
+
+  <!-- 没有任何回复的时候显示 -->
+  <view class='empty' wx:if="{{!loader.ing && comments.length == 0}}">
+    <view>暂时没有人回复哟</view>
+  </view>
+  <view style='margin-bottom:9rpx;'/>
+</view>
+
+<!-- <ad unit-id="adunit-9fc33944cf12b67a"></ad> -->
+
+<!-- 列表加载状态 -->
+<kw-loading loading="{{loading}}" hasmore="{{hasmore}}"/>
+
+
+<!--Empty view -->
+<view style='height:112rpx;'></view>
+
+<!--Fixbug: textarea.cursor-spacing cause view shifting --->
+<view style='height:1000px;' wx:if="{{reply.focus}}"/>
+
+<!--底部评论框 -->
+<!--底部评论框 -->
+<view class='bottom-bar'>
+  <view class='left' bindtap='threadCancel'>
+    <image style='margin: 0 auto;' src="{{theme.images}}/arrow_left.png"></image>
+  </view>
+  <view class='middle' bindtap='clickReply'>
+    <text>说点什么...</text>
+  </view>
+  <view class='right center'>
+    <image bindtap='clickFavor' 
+      src="{{theme.images+(item.post.stats.favored>0?'/liked.png':'/like.png')}}"/>
+    <button open-type='share' class='btn-clear share'>
+      <image src="{{theme.images}}/share.png"/>
+    </button>
+  </view>
+</view>
+
+<!-- 隐藏输入框 -->
+<view class='bg-mask' bindtap='clickMask' wx:if="{{reply.focus}}" >
+</view>
+
+<block wx:if="{{reply.focus}}">
+  <view class="input" catchtap="dummy">
+    <view class="hint">回复 <text>{{reply.hint? reply.hint: '作者'}}</text>
+    </view>
+    <input
+      value='{{textMessage}}'
+      bindinput='bindInput'
+      bindconfirm="sendComment" 
+      placeholder-class="input_null" 
+      fixed="{{true}}"
+      maxlength="140" 
+      show-confirm-bar="{{true}}" 
+      confirm-type="send"
+      cursor-spacing="96rpx" 
+      focus="{{true}}"
+      placeholder="一定要友善发言哦..">
+    </input>
+    <view class="send">
+      <image style="{{reply.hint?'opacity:.3':''}}" catchtap="chooseImage" 
+      src="{{reply.image? reply.image: '/res/photo.png'}}" />
+      <image class="del" catchtap="deleteImage" wx:if="{{reply.image}}" src="/res/del.png" />
+      <button catchtap="sendComment" class="btn-clear" 
+        style="color:{{theme.color}};{{(reply.text || reply.image)? '':'opacity: .3' }}">
+        回复   
+      </button>
+    </view>
+  </view>
+</block>
+
+<!-- 返回首页悬浮框 -->
+<block wx:if="{{shared}}">
+  <view catchtap='threadCancel' class='goto-home' style='background-color:{{theme.color}}'> 
+    <view style='text-align:center; line-height: 100rpx'>首页</view>
+  </view>
+</block>
+
+<!-- 登录对话框 -->
+<kw-login class="login" />

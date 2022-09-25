@@ -1,0 +1,75 @@
+
+
+
+.row-col-button{
+    position: absolute;
+    bottom: 0rpx;
+    width:100%;
+    text-align: center;
+    background-color:#eeeeee;
+    padding: 30rpx;
+    }
+  
+    .share-button{
+      width: 90%; 
+      margin-right: 20rpx; 
+      height: 80rpx; 
+      line-height: 60rpx; 
+      background: rgb(70, 181, 245);
+      color:#ffffff; 
+      padding-right:0rpx; 
+    }
+  
+   
+    .share { 
+      height: 100rpx;
+      width: 100%;
+      position: fixed;
+      bottom: 0rpx;
+      display: flex;
+      flex-direction: column;
+      align-items: center;
+      justify-content: center;
+      font-size: 24rpx;
+      background: rgb(70, 181, 245);
+      z-index: 10;
+      line-height: 120rpx;
+    } 
+  
+    .share text {
+      color: #ffffff;  
+      font-size: 36rpx;
+    }
+    
+    .share button {
+      position: absolute;
+      height: 100%;
+      width: 100%;
+      opacity: 0.1;
+      z-index: 99;
+    }
+
+
+
+
+.div4{ width:50%; height:100rpx;  float: left; 
+    text-align:center;line-height: 100rpx;
+    font-size: 36rpx;color: rgb(70, 181, 245);    background:#fff ;
+  }
+  
+    .div5{ width:50%; height:100rpx; float:left;text-align:center ;
+      line-height: 100rpx;
+      font-size: 36rpx;color: #fff;}
+    
+    .addAndSave{
+  
+      height: 100rpx;
+      width: 100%;
+      position: fixed;
+      bottom: 0rpx;
+      display: flex;
+      font-size: 24rpx;
+      background: rgb(70, 181, 245);
+      z-index: 10;
+      line-height: 120rpx;
+    }

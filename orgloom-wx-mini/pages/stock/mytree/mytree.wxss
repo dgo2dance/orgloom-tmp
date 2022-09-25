@@ -1,0 +1,247 @@
+/* pages/components/mytree/mytree.wxss */
+
+
+.ui-booklist-card {
+
+  display: -webkit-box;
+  display: -webkit-flex;
+  display: flex;
+  -webkit-box-align: center;
+  -webkit-align-items: center;
+  align-items: center;
+  background-color: #fff;
+  
+  }
+  /* 书单封面 */
+  .ui-booklist-card__img {
+    height: 24px;
+    width: 24px;
+    margin-right: 10px;
+  }
+  /* 书单信息 */
+  .ui-booklist-card__info {
+    -webkit-box-flex: 1;
+    -webkit-flex: 1;
+    flex: 1;
+  }
+  /* 书单标题 */
+  .ui-booklist-card__info-title {
+    margin-bottom: 5px;
+  }
+
+  /**
+ * “更多”图标、图标区域：长宽30px
+ */
+.ui-icon-more-area {
+    height: 30px;
+    text-align: center;
+    width: 30px;
+  }
+  .ui-icon-more {
+    position: relative;
+    top: 5px;
+    width: 20px;
+  }
+  
+  .card{
+    display: flex;
+    justify-content: space-around;
+    flex-wrap: wrap;
+    margin-bottom:-14px;
+  }
+
+  .paren{
+
+    position: relative;
+    margin-top: 10px;
+    margin-bottom: 5px;
+    width: 100%;
+    display: -webkit-box;
+    display: -ms-flexbox;
+    display: flex;
+  }
+
+  .left-paren{
+    border-top: 2px solid #0a0a0b; 
+    margin: 0 10%;
+    width: 31%;
+  }
+
+  .left-paren::before{
+    border-top: 2px solid #0a0a0b;
+    border-left: 2px solid #0a0a0b;
+     border-top-left-radius: 8px; 
+    margin-left: -10%;
+    margin-top: -2px;
+    content: "";
+    width: calc(10% + 1px);
+    height: 12px;
+    position: absolute;
+    display: block;
+  }
+
+  .left-paren::after{
+    border-bottom: 2px solid #0a0a0b;
+    border-right: 2px solid #0a0a0b;
+    border-bottom-right-radius: 8px;
+    margin-left: 30%;
+    margin-top: -12px;
+    content: "";
+    width: calc(10%);
+    height: 10px;
+    position: absolute;
+    display: block;
+
+  }
+
+  .right-paren {
+    border-top: 2px solid #0a0a0b; 
+    margin: 0 10%;
+    width: 31%;
+  }
+
+  .right-paren::before{
+    border-bottom: 2px solid #0a0a0b;
+    border-bottom-left-radius: 8px;
+    margin-left: calc(-10% - 1px);
+    margin-top: -12px;
+    border-left: 2px solid #0a0a0b;
+    content: "";
+    width: calc(10%);
+    height: 10px;
+    position: absolute;
+    display: block;
+  }
+.right-paren::after{
+
+  border-top: 2px solid #0a0a0b;
+    border-top-right-radius: 8px;
+    margin-left: 30%;
+    border-right: 2px solid #0a0a0b;
+    margin-top: -2px;
+    content: "";
+    width: calc(10% + 1px);
+    height: 12px;
+    position: absolute;
+    display: block;
+}
+
+.font-black-34{
+  color: #0a0a0b;
+  font-size: 24rpx!important;
+}
+
+.font-gray-26{
+  color: #aaa;
+  font-size: 24rpx!important;
+}
+
+.bottom-button{
+
+  position: absolute;
+    bottom: -10px;
+    left: 50%;
+    -webkit-transform: translateX(-50%);
+    -ms-transform: translateX(-50%);
+    transform: translateX(-50%);
+    width: -webkit-fit-content;
+    width: -moz-fit-content;
+    width: fit-content;
+    -webkit-appearance: none;
+    -moz-appearance: none;
+    appearance: none;
+    margin: 0;
+    padding: 0;
+    border-width: 0;
+    background: #2d2d2d;
+    border-radius: 4px;
+    color: #fff;
+    text-decoration: none;
+    font-size: inherit;
+    outline: none;
+    font-family: Basis Grotesque Pro,HelveticaNeue,sans-serif;
+    overflow: visible;
+    padding: 6rpx;
+    font-size: 24rpx;
+}
+.button-active{
+  background: #1e2ff1;
+}
+
+.card-item{
+
+  position: relative;
+  display: -webkit-box;
+  display: -webkit-flex;
+  display: flex;
+  -webkit-box-align: center;
+  -webkit-align-items: center;
+  align-items: center;
+  padding: 10px 5px; 
+  background-color: #fff;
+  border:1px solid #eee;
+  width: 40%;
+  border-radius: 20rpx;
+  height: 120rpx;
+  margin-bottom:14px
+}
+/* arrow common style */
+.arrow {
+  display: inline-block;
+    width: 5px;
+    height: 5px;
+    line-height: 6px;
+   
+    border-top: 2px solid rgb(255, 255, 255);
+    border-right: 2px solid rgb(255, 255, 255);
+}
+
+.arrow-top {
+  transform: rotate(-45deg);
+  margin-top: 2px;
+}
+.arrow-right {
+  transform: rotate(45deg);
+}
+.arrow-bottom {
+  transform: rotate(135deg);
+  margin-bottom: 2px;
+}
+.arrow-left {
+  transform: rotate(-135deg);
+}
+
+.active{
+border: 1px solid #1e2ff1;
+}
+
+.card-item-s{
+justify-content: center;
+flex-direction: column;
+position: relative;
+display: -webkit-box;
+display: -webkit-flex;
+display: flex;
+-webkit-box-align: center;
+-webkit-align-items: center;
+align-items: center;
+padding: 2px 5px; 
+background-color: #fff;
+width: 40%;
+height: 120rpx;
+margin-bottom:3px
+}
+
+.card-item-s .con{
+  width: 30px;
+  height: 30px;
+  border-radius: 15px;
+  border: 1px dashed #eee;
+  text-align: center;
+  align-items: center;
+  -webkit-box-align: center;
+  -webkit-align-items: center;
+  display: -webkit-box;
+  display: -webkit-flex;
+  justify-content: center;
+}

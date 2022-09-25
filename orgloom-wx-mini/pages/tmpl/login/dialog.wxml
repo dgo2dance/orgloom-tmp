@@ -1,0 +1,78 @@
+<!--pages/tmpl/login/dialog.wxml-->
+
+<!-- input dialog -->
+<view class="mask" hidden="{{!show}}" bindtap="dummy" >
+
+  <!--
+  <view class="dialog">
+    <image catchtap="clickClose" src="/res/del.png" class="close" />
+    <view class="-title">提示</view>
+    <view class="note">在社区中发言时，需要绑定微信昵称{{mode==2?'和手机号':''}}才能进行。</view>
+
+    <view class="input" style="margin-top:64rpx;">
+      <view class="circle"/>
+      <view class="name">昵称:</view>
+      <button class="btn-clear" open-type="getUserInfo" bindgetuserinfo="bindUserInfo">
+        {{user.nickname}}
+        <view class="btn" wx:if="{{!user.nickname}}" >
+          <text>一键获取</text><view class="underline"/> 
+        </view>
+      </button>
+    </view>
+    <view wx:if="{{mode==2}}" class="input" style="margin-top:16rpx;">
+      <view class="circle"/>
+      <view class="name">手机:</view>
+      <button class="btn-clear" open-type="getPhoneNumber" bindgetphonenumber="getPhoneNumber" >
+        {{user.phone}}
+        <view class="btn" wx:if="{{!user.phone}}">
+          <text>一键获取</text><view class="underline"/>
+        </view>
+      </button>
+    </view>
+    
+    <button  style="background:{{color}};{{btnEnable? '':'opacity:.3'}}"
+      catchtap="clickFinish"
+      class="btn-submit" 
+      hover-class="btn-submit-hover">
+      完成
+    </button>
+  </view>
+  -->
+       <view class="fadeIn" wx:if="{{dialog2}}">
+        <view class="weui-mask" bindtap="close"></view>
+        <view class="weui-half-screen-dialog">
+            <view class="weui-half-screen-dialog__hd">
+                <view class="weui-half-screen-dialog__hd__side" bindtap="close">
+                   <a class="weui-icon-btn">返回<i class="weui-icon-back-thin"></i></a> 
+                   <!--
+                 <a class="weui-icon-btn">更多<i class="weui-icon-more"></i></a>
+                 -->
+
+                </view>
+                <view class="weui-half-screen-dialog__hd__main">
+                    <strong class="weui-half-screen-dialog__title">提示</strong>
+                    <view class="weui-half-screen-dialog__subtitle"></view>
+                </view>
+                <!--
+                <view class="weui-half-screen-dialog__hd__side">
+                    <a class="weui-icon-btn">更多<i class="weui-icon-more"></i></a>
+                </view>
+                -->
+            </view>
+            <view class="weui-half-screen-dialog__bd">
+                <view class="weui-half-screen-dialog__desc">
+                  登陆后才能进行操作
+                </view>
+                <view class="weui-half-screen-dialog__tips">
+                   点击授权登录进行登录，点击取消返回
+                </view>
+            </view>
+            <view class="weui-half-screen-dialog__ft" style="display:flex">
+                <a class="weui-btn weui-btn_default" bindtap="close">取消</a>
+                <a class="weui-btn weui-btn_primary" bindtap="clickFinish">授权登录</a>
+            </view>
+        </view>
+    </view>
+
+
+</view>

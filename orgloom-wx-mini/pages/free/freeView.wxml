@@ -1,0 +1,178 @@
+<wxs src="../../common.wxs" module="morejs" />
+
+<view class="container">
+
+  <!--
+  <ec-canvas id="mychart-dom-scatter" canvas-id="mychart-scatter" ec="{{ ec }}"></ec-canvas>
+
+  -->
+
+<view class="top_contain">
+
+
+      <view class="top_img">
+            <image lazy-load src="{{free.profileIcon||'https://www.orgloom.cc/uploads/20220318/71973720-a651-11ec-bf6c-5fadf1c454c5.png'}}" mode="aspectFit"></image>
+      </view>
+       <view class="list_word">
+                                 
+                                    <view class="list_tag">
+                                                <view class="list_author_first ">{{free.freeName}}
+                                                </view>
+                                                <view class="list_author ">    {{free.goalsClassifys}}
+                                                </view>
+                                    </view>
+                              </view>
+                         
+
+</view>
+
+<!--
+  <view style="padding: 24rpx;">
+
+                  <view class="detail_title">相册</view>
+                <view class="weui-panel" class="imagePic">
+                           
+
+                    <block wx:for="{{photos}}" wx:key="*this">
+
+                  <view bindtap="previewPhoto" id="{{item}}" data-src="{{item.imgPath}}" style="margin-left:20rpx;">
+                            <image src="{{item.imgPath}}" mode="widthFix" style="width: 180rpx;height: 180rpx;"/>
+                        </view>
+                        <view>
+                            <text>\n</text>
+                        </view>
+                    </block>
+                </view>
+            </view>
+
+            -->
+
+
+      <view class="detail_contain">
+            <!--
+            <view class="detail_card detail_border ">
+                  <view class="detail_title">身高</view>
+                  <view class="detail_content">{{personDetail.height}}cm</view>
+            </view>
+            <view class="detail_card detail_border ">
+                  <view class="detail_title">体重</view>
+                  <view class="detail_content">{{personDetail.weight}}kg</view>
+            </view>
+            <view class="detail_card detail_border ">
+                  <view class="detail_title">常驻城市</view>
+                  <view class="detail_content">{{personDetail.city}}</view>
+            </view>
+              <view class="detail_card detail_border ">
+                  <view class="detail_title">学历</view>
+                  <view class="detail_content">{{personDetail.education}}</view>
+            </view>
+            <view class="detail_card detail_border ">
+                  <view class="detail_title">交友节目</view>
+                  <view class="detail_content">{{personDetail.friendShowValue}}</view>
+            </view>
+            <view class="detail_card detail_border ">
+                  <view class="detail_title">期望对象</view>
+                  <view class="detail_content">{{personDetail.youValue}}</view>
+            </view>
+            <view class="detail_card detail_border ">
+                  <view class="detail_title">微信</view>
+                  <view class="detail_content" bindtap="showPopup">{{personDetail.wechat}}已填写，点击查看</view>
+
+            </view>
+          -->
+            <view class="detail_card">
+                  <view class="detail_title">简介</view>
+                  <view class="detail_content">{{free.introduceRemark||'--'}}</view>
+            </view>
+            
+            <!--
+             <view class="detail_card">
+                  <view class="detail_title">负责工作</view>
+                  <view class="detail_content">{{free.duty||'--'}}</view>
+            </view>
+            -->
+
+               <view class="detail_card">
+                  <view class="detail_title">兴趣爱好</view>
+                  <view class="detail_content">{{free.interestClassifys||'--'}}</view>
+            </view>
+
+            <view class="detail_card ">
+                  <view class="detail_title" >微信</view>
+
+                   <view class="detail_content"> {{free.wechat}} </view>
+
+            
+            <!--  <view class='select-add-button' wx:if="{{!isSelected}}" bind:tap="showPopup">认领职位</view> -->
+
+            </view>
+
+            <!--
+            <view class="detail_card ">
+
+                        <view style="padding-right:20rpx;word-break:break-all">
+                       <textarea class="weui-input" style="font-size:26rpx;width:100%;height: 100px;" bindinput="setmyDesc" value="{{mydesc}}" placeholder="请输入您想要跟对方联系的信息,申请对方同意后获取对方的微信号，您的输入内容较大可能决定是否联系成功">
+
+                            </textarea>     
+                            </view>
+
+            <view class='submit-button' wx:if="{{!isSelected}}" bind:tap="showPopup">提交申请</view>
+
+
+            </view>
+
+            -->
+
+
+      </view>
+      <!--
+</view>
+-->
+
+<van-popup show="{{ show }}" closeable close-icon="close" bind:close="onClose">
+
+   <view class="list_buy">
+                                 
+                                    <view class="list_buy_title">
+                                          <text>
+                                            认领职位后，你可以:
+                                            1.编辑职位的详细信息，包括头像，介绍等；
+                                            2.可以通过别人通过小程序给你发送联系申请
+                                                 
+                                            认领规则
+                                            1.每个微信号/手机号只能认领一个
+                                            如果你并非本人，
+                                            请将该职位分享给本人进行认领
+
+                                            如果你是本人，请点击下面连接完成认领
+                                            </text>
+                                    </view>
+
+
+                  
+                               <view class="list_button">
+                                    <view class="list_button_text" bindtap="buy">认领职位</view>
+                                    <!--
+                                    <view class="list_time">{{morejs.timelog(item.creat )}}发布
+                                          
+                                    </view>
+                                    -->
+                              </view>
+</view>
+
+      
+</van-popup>
+
+<!--底部导航-->
+<!--
+<view class="tabbar">
+      <view class="t_card">
+            <image src="/images/heart.png"></image>
+            <text>评价</text>
+            <button class="t_button" bindtap="home"></button>
+      </view>
+</view>
+
+-->
+
+</view>

@@ -1,0 +1,20 @@
+version: '3.3'
+services:
+  master:
+    image: crawlabteam/crawlab:latest
+    container_name: crawlab_master
+    environment:
+      CRAWLAB_NODE_MASTER: "Y"
+      CRAWLAB_MONGO_HOST: "mongo"
+      CRAWLAB_SERVER_LANG_NODE: "Y"
+    ports:
+      - "10008:8080"
+    volumes:
+      # - "/var/crawlab/log:/var/logs/crawlab" # log persistent 日志持久化
+      - "/opt/crawlab/master:/root/.crawlab_workspace"
+    depends_on:
+      - mongo
+  mongo:
+    image: mongo:4.2
+    volumes:
+      - "/opt/crawlab/mongo/data/db:/data/db"  # make data persistent 持久化

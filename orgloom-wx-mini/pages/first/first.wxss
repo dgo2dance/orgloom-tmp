@@ -1,0 +1,120 @@
+
+.brand {
+  padding: 24rpx 18rpx;
+  background-color: rgba(0, 0, 0, .3);
+}
+
+.logo {
+  border: 6rpx solid white;
+  border-radius: 16rpx;
+  width: 144rpx;
+  height: 144rpx;
+}
+
+.app-name {
+  font-size: 32rpx;
+  color: white; 
+  font-weight:600;
+}
+
+.btn-home {
+  background-color: transparent;
+  border: 2rpx solid white;
+  border-radius: 10rpx;
+  font-size: 24rpx;
+  color: white;
+  padding: 8rpx 10rpx;
+  line-height: 24rpx;
+}
+
+.btn-home image {
+  width: 26rpx;  
+  height: 24rpx; 
+  margin-right: 8rpx;
+}
+
+.h-bottom {
+  display: flex;
+  align-items:flex-end;
+}
+
+.v-right {
+  display: flex;
+  flex-direction:column;
+  align-items: flex-end;
+}
+
+.btn-normal {
+  border: 1px solid white;
+  border-radius: 14rpx;
+  color: white;
+}
+
+.tablayout {
+ /* display:flex; */
+  align-items:center; 
+  background:white;
+}
+
+.tablayout .search {
+  width:42rpx;
+  height:42rpx; 
+  opacity: 0.4; 
+  margin-left: 32rpx;
+  margin-bottom:-4rpx;
+}
+
+.new-topic {
+  position: fixed;
+  bottom: 30rpx;
+  right: 30rpx;
+  width: 128rpx;
+  height: 128rpx;
+  z-index: 9999;
+}
+
+.speaker {
+  width: 720rpx;
+  font-size: 28rpx;
+}
+
+.speaker image {
+  width: 30rpx; 
+  height: 30rpx;
+  margin-right: 16rpx;
+  vertical-align: middle;
+  margin-top: -5rpx;
+}
+
+.top-post {
+  font-size: 28rpx;
+}
+
+.top-post .top {
+  width: 30rpx;
+  height: 30rpx;
+  padding: 0 4rpx;
+  vertical-align: middle;
+  border-radius: 4rpx;
+  text-align: center;
+  font-size: 24rpx;
+  color: white;
+  background-color: red;
+  margin-right: 16rpx;
+  position: relative;
+  top: -2rpx;
+}
+
+ .top{
+  padding: 28rpx;
+  line-height: 40rpx;
+
+}
+ .cate-text {
+  display: flex;
+  float: left;
+  color: rgb(0, 0, 0);
+  opacity: .5;
+  font-size: 40rpx;
+  font-weight: 500;
+}

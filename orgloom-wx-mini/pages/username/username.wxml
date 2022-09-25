@@ -1,0 +1,216 @@
+
+<!--
+<van-cell-group>
+  <van-field 
+  value="{{ value }}"
+  placeholder="请输入姓名"
+  border="{{ false }}"
+  label="姓名"
+  bind:change="onPersonNameChange"
+  required="true"
+/>
+</van-cell-group>
+
+<van-cell-group>
+  <van-field 
+  value="{{ value }}"
+  placeholder="请输入电话"
+  border="{{ false }}"
+  label="电话"
+  bind:change="onPersonPhoneChange"
+  required="true"
+/>
+</van-cell-group>
+-->
+<view class="con_input">
+
+    
+<!-- <view class="weui-cell ">
+                <view class="weui-cell__hd">
+                    <view class="weui-label">公司：</view>
+                </view>
+                <view class="weui-cell__bd">
+                    <input class="weui-input" name="Name" value="{{companyName}}" bindchange="setName" placeholder="请输入公司"/>
+                </view>
+</view> -->
+
+
+
+
+
+ 
+    <view class="weui-cell ">
+        <view class="weui-cell__hd">
+            <view class="weui-label">昵称</view>
+        </view>
+        <view class="weui-cell__bd">
+            <input class="weui-input" name="Name" value="{{free.freeName}}" bindchange="setFreeName" placeholder="请设置昵称"/>
+        </view>
+</view>
+
+
+<!--
+
+  <view class="weui-cell">
+                                <view class="weui-cell__hd">
+
+                    <view class="weui-label">学历：</view>
+                    </view>
+
+                <view class="weui-cell__bd">
+                    <picker bindchange="bindCountryChange" value="{{typeIndex}}"  range="{{countries}}">
+                            <input class="weui-input" name="birthData" disabled value="{{countries[typeIndex]}}"  placeholder="请选择学历"></input>
+                    </picker>
+                </view>
+            </view>
+
+-->
+
+<!--
+
+  <view class="weui-cell">
+                                <view class="weui-cell__hd">
+
+                    <view class="weui-label">岗位：</view>
+                    </view>
+
+                <view class="weui-cell__bd">
+                    <picker bindchange="bindStationChange" value="{{statIndex}}"  range="{{stations}}">
+                            <input class="weui-input" name="stations" disabled value="{{stations[statIndex]}}"  placeholder="请选择岗位"></input>
+                    </picker>
+                </view>
+            </view>
+-->
+
+
+
+
+<!--
+<view class="weui-cell ">
+                <view class="weui-cell__hd">
+                    <view class="weui-label">工作时间：</view>
+                </view>
+                <view class="weui-cell__bd">
+                    <picker mode="date" start="1900-01-01" end="2020-06-06" bindchange="handleDateChange">
+                            <input class="weui-input" name="birthData" disabled value="{{ birthData}}"  placeholder="请选择开始参加工作时间"></input>
+                        </picker>
+                </view>
+</view>
+-->
+<!--
+   <view class="weui-cell">
+                                <view class="weui-cell__hd">
+
+                    <view class="weui-label">职业：</view>
+                    </view>
+
+                <view class="weui-cell__bd">
+                    <picker bindchange="bindCountryChange" value="{{typeIndex}}"  range="{{countries}}">
+                            <input class="weui-input" name="birthData" disabled value="{{countries[typeIndex]}}"  placeholder="请选择职业"></input>
+                    </picker>
+                </view>
+            </view>
+
+
+  
+
+<view class="weui-cell ">
+                <view class="weui-cell__hd">
+                    <view class="weui-label">职业：</view>
+                </view>
+                <view class="weui-cell__bd">
+         <input class="weui-input" name="phone" value="{{personDetail.phone}}" bindchange="setJob" placeholder="请输入职业"/>
+               
+     
+               
+                </view>
+</view>
+-->
+
+
+<!--
+
+<view class="weui-cell ">
+                <view class="weui-cell__hd">
+                    <view class="weui-label">年薪：</view>
+                </view>
+                <view class="weui-cell__bd">
+                    <input class="weui-input" name="Name" value="{{personDetail.name}}" bindchange="setName" placeholder="请输入年薪"/>
+                </view>
+</view>
+-->
+
+
+
+<!--
+<view class="weui-cell ">
+                <view class="weui-cell__hd">
+                    <view class="weui-label">QQ：</view>
+                </view>
+                <view class="weui-cell__bd">
+                    <input class="weui-input" name="phone" value="{{personDetail.phone}}" bindchange="setPhone" placeholder="请输入QQ号"/>
+                </view>
+</view>
+
+<view class="weui-cell ">
+                <view class="weui-cell__hd">
+                    <view class="weui-label">身高(cm)：</view>
+                </view>
+                <view class="weui-cell__bd">
+                    <input class="weui-input" name="phone" value="{{personDetail.phone}}" bindchange="setPhone" placeholder="请输入身高"/>
+                </view>
+</view>
+
+
+<view class="weui-cell ">
+                <view class="weui-cell__hd">
+                    <view class="weui-label">体重(kg)：</view>
+                </view>
+                <view class="weui-cell__bd">
+                    <input class="weui-input" name="phone" value="{{personDetail.phone}}" bindchange="setPhone" placeholder="请输入体重"/>
+                </view>
+</view>
+-->
+<!-- <view class="weui-cell-text ">
+                <view class="weui-cell__hd">
+                    <view class="weui-label">自我描述：</view>
+                </view>
+                <view class="weui-cell__bd">
+                            <textarea class="weui-input" value="{{free.introduceRemark}}" bindinput='textinputDesc' placeholder="请输入介绍">
+
+
+                            </textarea>               
+  </view>
+</view> -->
+
+
+
+          <view class="detail_card " style="margin-top:30px;">
+
+                        
+
+            <view class='submit-button' bind:tap="submit">提交</view>
+
+
+            </view>
+
+
+</view>
+
+
+      
+
+
+<!--
+
+<view class='share'>
+  <text>提交</text>
+
+  <button bindtap='submit'></button>
+
+</view>
+
+-->
+
+<!-- 登录对话框 -->
+<kw-login class="login" />

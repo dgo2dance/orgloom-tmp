@@ -1,0 +1,620 @@
+<!--index.wxml-->
+<wxs module="filters" src="../../utils/filter.wxs"></wxs>
+<!--pages/stock/stock.wxml-->
+<view class="stock-container">
+
+
+   <view>
+     <!--
+      <van-notice-bar mode="closeable" style="font-size:8px" :scrollable="false">关注光迹服务号，自动获取内容推送</van-notice-bar>
+      -->
+      </view>
+
+
+      <view class="weui-cell ui-booklist-card" >
+        <view style="height:50px;width:50px;margin-right: 15rpx">
+      <image class="ui-booklist-card__img" src="{{companyDetail.logoIcon || '/images/icon_empty_booklist.png'}}" mode="aspectFit"></image>
+        </view>
+      <view class="ui-booklist-card__info">
+        <view class="ui-booklist-card__info-title font-black-34">{{companyDetail.name}}</view>
+        <!-- style="color: #aaa; font-size: 12px;" -->
+        <view class="font-gray-26" >
+         {{companyDetail.followCount}}人已关注</view>
+      </view>
+   
+    </view>
+
+
+  <!--
+
+   <view class='title-container-pic'>
+    <view class='stock-title-container'>
+     <view class='stock-title'>
+      <view class='stock-name'>
+              <image class="ui-booklist-card__img_detail" src="{{companyDetail.logoIcon || '/images/icon_empty_booklist.png'}}" mode="aspectFill"></image>
+      </view>
+      </view>
+    </view>
+  </view>
+
+  <view class='title-container'>
+    <view class='stock-title-container'>
+      <view class='stock-title'>
+        <view class='stock-name'>{{stockName}}</view>
+      
+    </view>
+   
+  </view>
+
+  -->
+
+
+
+
+  <view class="stock-price-top-container">
+    <!--
+    <view class='price-container {{stockMarket.increase >0 ? "up" : "down"}}'>
+      <view class='current-price'>{{companyDetail.followCount}}关注</view>
+     
+    </view>
+    -->
+    <view class='select-button-container' bindtap='addFollow'>
+    <!--   <view class='select-button-line'></view> -->
+      <view class='select-del-button' wx:if="{{isFollowed}}">取消关注</view>
+      <view class='select-add-button' wx:if="{{!isFollowed}}">加关注</view>
+    </view>
+
+      
+
+  </view>
+
+
+  <!--
+  <view class="stock-price-detail-container">
+    <view class='detail-block-container'>
+      <view class='detail-block-row'>
+        <view class='title'>最高</view>
+        <view class='value {{stockMarket.highPrice > stockMarket.lastPrice ? "up" : "down"}}'>{{companyDetail.salaryMax}}K</view>
+      </view>
+    
+    </view>
+    <view class='detail-block-container'>
+      <view class='detail-block-row'>
+        <view class='title'>最低</view>
+        <view class='value {{stockMarket.lowPrice > stockMarket.lastPrice ? "up" : "down"}}'>{{companyDetail.salaryMin}}K</view>
+      </view>
+
+    
+   
+    </view>
+
+      <view class='detail-block-container'>
+      <view class='detail-block-row'>
+        <view class='title'>平均</view>
+        <view class='value '>{{companyDetail.salaryAvg}}K</view>
+      </view>
+     
+    </view>
+
+    
+    <view class='detail-block-container'>
+       <view class='detail-block-row'>
+        <view class='title'>分享数</view>
+        <view class='value {{stockMarket.openPrice > stockMarket.lastPrice ? "up" : "down"}}'>{{companyDetail.shareCount}}</view>
+      </view>
+   
+    </view>
+  
+    <view class='triangle-bottomright-container'>
+      <view class='triangle-bottomright' bindtap='clickDetailMore'></view>
+    </view>
+  
+  </view>
+
+-->
+<!--
+  <view class='stock-tab-container'>
+    <view class='tab-button-container' bindtap='clickTabTimeShare'>
+      <view class='name {{tab.timeShareSelected ? "active" : "no"}}'>全部</view>
+      <view class='triangle-down {{tab.timeShareSelected ? "active" : "no"}}'></view>
+    </view>
+    <view class='tab-button-container' bindtap='clickTabDayKline'>
+      <view class='name {{tab.dayKLineSelected ? "active" : "no"}}'>同岗位</view>
+      <view class='triangle-down {{tab.dayKLineSelected ? "active" : "no"}}'></view>
+    </view>
+    <view class='tab-button-container' bindtap='clickTabWeekKline'>
+      <view class='name {{tab.weekKLineSelected ? "active" : "no"}}'>同部门</view>
+      <view class='triangle-down {{tab.weekKLineSelected ? "active" : "no"}}'></view>
+    </view>
+    <view class='tab-button-container' bindtap='clickTabMonthKline'>
+      <view class='name {{tab.monthKLineSelected ? "active" : "no"}}'>同学历</view>
+      <view class='triangle-down {{tab.monthKLineSelected ? "active" : "no"}}'></view>
+    </view>
+    <view class='tab-button-container' bindtap='clickTabYearKline'>
+      <view class='name {{tab.yearKLineSelected ? "active" : "no"}}'>同工作年限</view>
+      <view class='triangle-down {{tab.yearKLineSelected ? "active" : "no"}}'></view>
+    </view>
+    <view class='tab-button-container'>
+      <view class='name'>无</view>
+      <view class='tab-triangle-bottom'></view>
+    </view>
+  </view>
+  -->
+  <view class='stock-time-share-container' wx:if="{{tab.timeShareSelected}}">
+    <!--
+    <view class="real-price-container">
+      <view class='time'>13:38</view>
+     <view class='value'>价格:82.37</view>
+      <view class='value'>+9.99%</view>      
+    </view>
+    -->
+      <!--
+    <view class='time-share-chart-container'>
+      <view class='time-share-top-chart' wx:if="{{tab.timeShareSelected}}">
+        <ec-canvas ec="{{ ecTimeShareLine }}"></ec-canvas>
+      </view>
+    
+       <view class='time-share-bottom-chart' wx:if="{{tab.timeShareSelected}}">
+        <ec-canvas ec="{{ ecTimeShareBar }}"></ec-canvas>
+       </view>   
+   
+    </view>
+    -->
+      <!--      <view class='time-share-top-chart' id="mychart-scatter" wx:if="{{tab.timeShareSelected}}"> -->
+
+      <!--
+      <view class='time-share-chart-container'>
+    
+      <view class='time-share-top-chart' >
+      
+        <ec-canvas ec="{{ ecScatter }}"  canvas-id="mychart-scatter"  force-use-old-canvas="true"></ec-canvas>
+      </view>
+
+         </view>
+         -->
+      <!--
+        <scroll-view scroll-y='true' class='time-share-top-chart' wx:if="{{tab.timeShareSelected}}">
+        <ec-canvas ec="{{ ecScatter }}"></ec-canvas>
+      </scroll-view>
+      -->
+      <!--
+       <view class='time-share-bottom-chart' wx:if="{{tab.timeShareSelected}}">
+        <ec-canvas ec="{{ ecTimeShareBar }}"></ec-canvas>
+       </view>   
+       -->   
+ 
+
+
+    <view class='hot-container'>
+          <view class='tab-container'>
+
+        <view class='hot-tab-button {{hot_tab_selected.fall ? "active" : ""}}' bindtap='clickComment'>最新
+          <view class='border-bottom {{hot_tab_selected.fall ? "active" : ""}}'></view>
+        </view>
+
+         <view class='hot-tab-button {{hot_tab_selected.subject ? "active" : ""}}' bindtap='clickSubject'>话题
+          <view class='border-bottom {{hot_tab_selected.subject ? "active" : ""}}'></view>
+        </view>
+
+         <view class='hot-tab-button {{hot_tab_selected.turnOver ? "active" : ""}}' bindtap='clickHotDesc'>介绍
+          <view class='border-bottom {{hot_tab_selected.turnOver ? "active" : ""}}'></view>
+        </view>      
+
+
+        <view class='hot-tab-button {{hot_tab_selected.increase ? "active" : ""}}' bindtap='clickHotIncreaseTop'>架构
+          <view class='border-bottom {{hot_tab_selected.increase ? "active" : ""}}'></view>
+        </view>
+        
+      
+        
+     
+        
+      </view>
+
+    <view class='hot-stock-content-container desc'>
+      
+      <view hidden="{{hot_show_selected.isCard}}" >
+         <view class="con-card">
+
+            <view class="about">
+               <h2>架构</h2>
+            </view>
+        
+      <mytree id='myTreeSecond' idFlag='#myTreeSecond'  model='{{treeModelEnd}}' company='{{companyDetail}}' top='{{false}}' parent='' style="font-size: 16px;color: #111;" bind:tapitem='tapItem'></mytree>
+    
+      <view class="nocontent" wx:if="{{treeModelEnd==undefined||treeModelEnd.length==0}}">
+            <!--  <image lazy-load src="/images/blank.png"></image> -->
+              <view class="blank_text">暂时没有人员,点击添加吧</view>
+
+              <!-- <ad unit-id="adunit-9fc33944cf12b67a"></ad> -->
+
+          </view>
+      </view>
+
+
+       <!-- <view class="con-card"> -->
+            <!-- <view class="about" style="display:flex" bindtap='clickHotDesc'>
+               <h2>连系人</h2>
+               <view catchtap="clickContact"><van-icon name="question-o"/> </view>
+            </view>
+
+
+               <view  style="border:1px dashed #eee;height: 50px;justify-content: center;line-height: 50px;display: flex;text-align: center; margin-bottom: 30px" bindtap='clickAdd'>
+               <image style="width: 20px;height: 20px;margin-top:15px;margin-right: 10px" src="/images/add.png"> </image>
+
+               <h2>加入连系人</h2>
+            </view> -->
+
+<!-- 
+               <view >
+                  <navigator wx:for="{{freeList}}" wx:key="_id" class="weui-cell ui-booklist-card" hover-class="ui--active" url="/pages/free/free?id={{item.id}}&&name={{item.name}}">
+
+             
+
+    <view class="freeIcon">
+        {{item.firstName}}
+      </view>
+     
+      <view class="ui-booklist-card__info">
+        <view class="ui-booklist-card__info-title font-black-34">{{item.freeName}}</view>
+        <view class="font-gray-26">
+        {{item.goalsClassifys}}
+         {{item.interestClassifys}}   |    {{item.goalsClassifys}}
+      {{ sex[item.sexClassify].value}} {{education[item.eduClassify].value}}  {{item.height}}cm  
+         
+         
+         </view>
+      </view>
+      <view class="ui-icon-more-area" data-type="create" data-index="{{index}}" catchtap="onShowActionSheet" hover-stop-propagation>
+        <image src="/images/icon_more.png" mode="widthFix" class="ui-icon-more"></image>
+      </view>
+    </navigator>
+        </view> -->
+                  <!-- <view class="nocontent" wx:if="{{freeList.length==0&&loading!=true}}">
+                    <view class="blank_text">暂时没有人员</view>
+                  </view> -->
+            <!-- </view> -->
+
+
+      
+     </view>
+
+
+           <view hidden="{{hot_show_selected.isComment}}"  class="desc">
+            
+                 
+
+            <view class="con-card">
+            <view class="about" bindtap='clickHotDesc'>
+               <h2>资讯</h2>
+            </view>
+
+                 <!-- <view  style="border:1px dashed #eee;height: 50px;justify-content: center;line-height: 50px;display: flex;text-align: center; margin-bottom: 30px" bindtap='clickSay'>
+               <image style="width: 20px;height: 20px;margin-top:15px;margin-right: 10px" src="/images/add.png"> </image>
+
+               <h2>添加</h2>
+            </view> -->
+
+
+            <!-- <view >
+              <image catchtap='clickSay' class='new-topic' src="/images/write.png"></image>
+            </view> -->
+
+            <postlist class="tabpage" filter="val" ids="{{companyDetail.id}}"  wx:if='{{postloading}}'/>
+
+
+            
+            </view>
+
+          </view>
+
+
+          <view hidden="{{hot_show_selected.isSubject}}"  class="desc">
+            
+                 
+
+                <view class="con-card">
+            <view class="about" bindtap='clickHotDesc'>
+               <h2>话题</h2>
+            </view>
+
+                 <!-- <view  style="border:1px dashed #eee;height: 50px;justify-content: center;line-height: 50px;display: flex;text-align: center; margin-bottom: 30px" bindtap='clickSay'>
+               <image style="width: 20px;height: 20px;margin-top:15px;margin-right: 10px" src="/images/add.png"> </image>
+
+               <h2>添加</h2>
+            </view> -->
+            <view >
+              <image catchtap='clickSay' class='new-topic' src="/images/write.png"></image>
+            </view>
+
+            <subjectlist class="tabpage" filter="val" ids="{{companyDetail.id}}"  wx:if='{{postloading}}'/>
+
+
+            
+            </view>
+
+          </view>
+
+
+
+           <view hidden="{{hot_show_selected.isDesc}}"  class="desc">
+
+          <view class="con-card">
+            <view class="about">
+               <h2>介绍</h2>
+            </view>
+
+
+            <view class="about-title">
+               {{companyDetail.visionRemark}}
+            </view>
+
+          </view>
+
+
+          <view class="con-card">
+
+            <view class="about">
+               <h2>架构</h2>
+            </view>
+
+
+            <view class="about-chart">
+
+                    <mytree id='myTreeFirst' model='{{treeModelEnd}}' company='{{companyDetail}}' idFlag='#myTreeFirst' top='{{false}}' parent='' bind:tapitem='tapItem' style="font-size: 16px;color: #111;"></mytree>
+
+                    <view class="nocontent" wx:if="{{treeModelEnd==undefined||treeModelEnd.length==0}}">
+              <view class="blank_text">暂时没有人员,点击添加吧</view>
+          </view>
+
+            </view>
+
+          </view>
+              
+              
+
+             <!--
+            <view class="detail_card detail_border ">
+                  <view class="detail_title">愿景</view>
+                  <view class="detail_content">{{companyDetail.visionRemark}}</view>
+            </view>
+
+
+            <view class="detail_card detail_border ">
+                  <view class="detail_title">网站</view>
+                  <view class="detail_content">{{companyDetail.website}}</view>
+            </view>
+
+
+            <view class="detail_card detail_border ">
+                  <view class="detail_title">城市</view>
+                  <view class="detail_content">{{companyDetail.address}}</view>
+            </view>
+
+
+            <view class="detail_card detail_border ">
+                  <view class="detail_title">行业</view>
+                  <view class="detail_content">{{industry[companyDetail.industryClassify].value}}</view>
+            </view>
+
+            <view class="detail_card detail_border ">
+                  <view class="detail_title">人数</view>
+                  <view class="detail_content">{{employess[companyDetail.employeesClassify].value}}</view>
+            </view>
+            -->
+
+
+
+          </view>
+
+
+      <view class="nocontent" wx:if="{{tabIndex==2}}">
+       <image lazy-load src="/images/blank.png"></image>
+      <view class="blank_text">这里空空如也~</view>
+      </view>
+
+      
+      </view>
+
+
+    </view>
+
+      
+  </view>
+  <view class='stock-k-line-container' wx:if="{{tab.kLineSelected}}">    
+    <view class='k-line-chart-container'>
+    </view>
+    <view class="stock-k-line-news-container">
+      <view class='nav-container tab'>
+        <view class="button-container">
+          <view class="nav-button {{ kLineTab.news_selected ? 'active': 'no' }}" bindtap="clickKLineNewsTab"> 新 闻 </view>
+          <view class="nav-button {{ kLineTab.public_selected ? 'active': 'no' }}" bindtap="clickKLinePublicTab"> 公 告 </view>
+        </view>
+      </view>
+      <view class="news-container" wx:if="{{ kLineTab.news_selected }}"></view>
+      <view class="public-container" wx:if="{{ kLineTab.public_selected }}">
+        <view class='public-row'>
+          <view class='public-title'>中国石油内幕信息知情人登记管理办法</view>
+          <view class='public-date'>2019-05-12</view>
+        </view>
+        <view class='public-row'>
+          <view class='public-title'>中国石油董事会2019年第三次会议决议及聘任总裁，副总裁及总工程师辞任的公告</view>
+          <view class='public-date'>2019-04-10</view>
+        </view>
+        <view class='public-row'>
+          <view class='public-title'>中国石油董事会2019年第三次会议决议及聘任总裁，副总裁及总工程师辞任的公告</view>
+          <view class='public-date'>2019-03-10</view>
+        </view>
+      </view>
+    </view>
+  </view>  
+</view>
+
+<!-- 
+<view class="bottom-btn">
+   
+  <view class="l l-collect" bindtap="addCollectOrNot" wx:if="{{!isGroupon}}">
+    <van-icon class="icon" name="star" color="#ab956d" wx:if="{{collect}}"/>
+    <van-icon class="icon" name="star-o" wx:else/>
+  </view>
+  
+  <view class="l l-cart" wx:if="{{!isGroupon}}">
+ 
+    <view class="box">
+      <text class="cart-count">{{cartGoodsCount}}</text>
+      <van-icon bindtap="openCartPage" class="icon" name="cart-o" /> 
+    </view>
+    
+  </view>
+
+ <view class="r" bindtap="addToCart" wx:if="{{!soldout}}" wx:if="{{!isGroupon}}">邀请分享</view> 
+  <view class="r"  ><button open-type="share">分享</button></view>
+  <view class="n" wx:if="{{soldout}}">商品已售空</view>
+ 
+</view> -->
+
+
+
+
+<cover-view class='mask_container {{modal.detailMoreModalHidden ? "hidden" : "show"}}'>
+   <cover-view class='modal-detail-block-container'>
+    <cover-view class="row">
+      <cover-view class='half-row'>
+        <cover-view class='title'>最高</cover-view>
+        <cover-view class='value up'>8.46</cover-view>
+      </cover-view>
+      <cover-view class='half-row'>
+        <cover-view class='title'>今开</cover-view>
+        <cover-view class='value down'>8.46</cover-view>
+      </cover-view>
+    </cover-view>
+    <cover-view class="row">
+      <cover-view class='half-row'>
+        <cover-view class='title'>最低</cover-view>
+        <cover-view class='value down'>8.46</cover-view>
+      </cover-view>
+      <cover-view class='half-row'>
+        <cover-view class='title'>昨收</cover-view>
+        <cover-view class='value'>8.46</cover-view>
+      </cover-view>
+    </cover-view>
+    <cover-view class="row">
+      <cover-view class='half-row'>
+        <cover-view class='title'>量</cover-view>
+        <cover-view class='value'>8.46</cover-view>
+      </cover-view>
+      <cover-view class='half-row'>
+        <cover-view class='title'>内盘</cover-view>
+        <cover-view class='value'>8.46</cover-view>
+      </cover-view>
+    </cover-view>
+    <cover-view class="row">
+      <cover-view class='half-row'>
+        <cover-view class='title'>额</cover-view>
+        <cover-view class='value up'>56.78亿</cover-view>
+      </cover-view>
+      <cover-view class='half-row'>
+        <cover-view class='title'>外盘</cover-view>
+        <cover-view class='value'>5.12亿</cover-view>
+      </cover-view>
+    </cover-view>
+    <cover-view class="row">
+      <cover-view class='half-row'>
+        <cover-view class='title'>涨停</cover-view>
+        <cover-view class='value up'>8.46</cover-view>
+      </cover-view>
+      <cover-view class='half-row'>
+        <cover-view class='title'>换手</cover-view>
+        <cover-view class='value'>8.46</cover-view>
+      </cover-view>
+    </cover-view>
+    <cover-view class="row">
+      <cover-view class='half-row'>
+        <cover-view class='title'>跌停</cover-view>
+        <cover-view class='value down'>8.46</cover-view>
+      </cover-view>
+      <cover-view class='half-row'>
+        <cover-view class='title'>振幅</cover-view>
+        <cover-view class='value'>8.46%</cover-view>
+      </cover-view>
+    </cover-view>
+    <cover-view class="row">
+      <cover-view class='half-row'>
+        <cover-view class='title'>量比</cover-view>
+        <cover-view class='value'>8.46</cover-view>
+      </cover-view>
+      <cover-view class='half-row'>
+        <cover-view class='title'>委比</cover-view>
+        <cover-view class='value'>8.46%</cover-view>
+      </cover-view>
+    </cover-view>
+    <cover-view class="row">
+      <cover-view class='half-row'>
+        <cover-view class='title'>总市值</cover-view>
+        <cover-view class='value'>8.46</cover-view>
+      </cover-view>
+      <cover-view class='half-row'>
+        <cover-view class='title'>市盈率</cover-view>
+        <cover-view class='value'>8.46</cover-view>
+      </cover-view>
+    </cover-view>
+    <cover-view class="row">
+      <cover-view class='half-row'>
+        <cover-view class='title'>流通市值</cover-view>
+        <cover-view class='value'>33.46</cover-view>
+      </cover-view>
+      <cover-view class='half-row'>
+        <cover-view class='title'>市净率</cover-view>
+        <cover-view class='value'>13.46</cover-view>
+      </cover-view>
+    </cover-view>
+    <cover-view class="row">
+      <cover-view class='half-row'>
+        <cover-view class='title'>流通股</cover-view>
+        <cover-view class='value'>33.46</cover-view>
+      </cover-view>
+      <cover-view class='half-row'>
+        <cover-view class='title'>总股本</cover-view>
+        <cover-view class='value'>1.46亿</cover-view>
+      </cover-view>
+    </cover-view> 
+    <cover-view class='modal-close-button-container'>
+      <cover-view class='close-button' bindtap='clickDetailMoreClose'>X</cover-view>
+    </cover-view>   
+
+   </cover-view>
+  
+</cover-view>
+
+<!-- 登录对话框 -->
+<kw-login class="login" />
+
+
+<van-popup show="{{ showPop }}" closeable close-icon="close" bind:close="onClose">
+
+   <view class="list_buy">
+                                 
+                                    <view class="list_buy_title">
+                                          <text>
+                                            加入成为连系人，你可以:
+                                            1.提供内推，兴趣交友，单身交友，行业交流，拼车，二手交易以及自定义其他服务；
+                                            2.其他人连系你时，你同意后，对方可获取到你的连系方式；
+                                            3.获取积分及现金交易提成奖励
+                                
+                                            </text>
+                                    </view>
+
+
+                  
+                               <!-- <view class="list_button">
+                                    <view class="list_button_text" bindtap="buy">认领职位</view>
+                                    
+                                    <view class="list_time">{{morejs.timelog(item.creat )}}发布
+                                          
+                                    </view>
+                                    
+                              </view> -->
+</view>
+
+      
+</van-popup>

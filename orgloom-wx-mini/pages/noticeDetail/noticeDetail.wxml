@@ -1,0 +1,77 @@
+<wxs src="../../common.wxs" module="morejs" />
+ 
+<view class="{{scrollTop>310?'nofixed':''}}">
+</view>
+
+<view  style='margin:25px;'>
+    <view  class='line' style='margin-left:112rpx;'></view>
+    <view class="comment" style="display:flex">
+      <image class="avatar-large" style='margin-right:18rpx;width: 25px!important; height: 25px!important;min-width: 25px!important; max-width: 25px!important'
+        src="{{'/images/notice-new.png'}}" 
+        
+        />
+      <view style='width:100%;' >
+        <!-- Reply user name and content-->
+        <view class='nickname' style="color:#aaa;font-size:12px">
+         来自于 {{
+            item.userName? item.userName: '匿名' 
+          }}
+        </view>
+        <view class='detail'>{{item.contents}}</view>
+        <image wx:if="{{item.imageIcon}}" 
+          class="image"
+          mode="widthFix"
+          src="{{item.imageIcon}}"
+        />
+    
+      
+
+        <!-- Comment and Favor bar-->
+        <view class='flow-right' style='margin-top:9rpx;display:block!important'>
+          <!-- date -->
+          <view class='subtitle' style='margin-right:auto;font-size:12px'>{{item.message}}</view>
+
+          <view class='subtitle' style='margin-right:auto;margin-top:5px;font-size:12px'>{{item.createTime}}</view>
+
+
+          <!-- Comment -->
+          <!-- <view class='img-text' style='margin-right:18rpx'
+                catchtap='clickListComment' 
+                data-idx="{{index}}"
+                data-id="{{item.id}}"
+                data-userId="{{item.userId}}">
+            <image style="width:42rpx; height:42rpx" src='{{theme.images}}/comment.png'></image>
+          </view> -->
+    
+        </view>
+      </view>
+    </view>
+  </view>
+
+
+
+  <button style='margin-top: 28rpx;' 
+  class='btn-submit' 
+  hover-class='btn-submit-hover'
+  bindtap='agree'>同意</button>
+<button style='' 
+  class='btn-cancel' 
+  hover-class='btn-cancel-hover'
+  bindtap='refuse'>拒绝</button>
+
+
+
+
+<!-- <view class="nocontent" wx:if="{{list.length==0&&loading!=true}}">
+      <image lazy-load src="/images/blank.png"></image>
+      <view class="blank_text">这里空空如也~</view>
+</view> -->
+
+<van-transition show="{{ scrollTop>500 }}" custom-class="block" duration="600">
+      <view class="totop" bindtap="gotop">
+            <image  lazy-load src="/images/top.png"></image>
+      </view>
+</van-transition>
+
+<!-- 登录对话框 -->
+<kw-login class="login" />

@@ -1,0 +1,131 @@
+<view class="contain">
+      <view class="card">
+            <view class="title">我的积分</view>
+            <view class="num">{{num}}.00</view>
+      </view>
+
+
+      <view style="display:flex;flex:left;justify-content:space-around;margin-top:16px;margin-bottom:4px;">
+            <view style="margin-left:30px" bindtap="clickKnowledge"> 
+       <image class="avatar-large" style='margin-right:18rpx;width: 25px!important; height: 25px!important;min-width: 25px!important; max-width: 25px!important'
+        src="{{'/images/knowledge.png'}}" 
+        />
+        DAO知识
+
+            </view>
+
+              <view style="margin-right:30px" bindtap="clickTask"> 
+       <image class="avatar-large" style='margin-right:18rpx;width: 25px!important; height: 25px!important;min-width: 25px!important; max-width: 25px!important'
+        src="{{'/images/task.png'}}" 
+        /> 积分任务
+                  
+            </view>
+
+      </view>
+
+            <view class="panel" >
+                  <navigator url="{{url}}" hover-class="panel-hd--active">
+                  <view class="panel-hd">
+                     <view style="display: inline-flex;flex: left;justify-content: space-around;">
+                     </view>
+                        <button class="kefu-button cu-button content" open-type="contact" session-from="weapp">
+推荐兑换     更多商品点击联系客服兑换
+
+
+
+                  
+                     <view class="panel-hd__arrow"></view>
+                  </button>
+                  </view>
+                  </navigator>
+            </view>
+
+              <!-- <panel title="推荐兑换" url="/pages/my/my" >
+                  <template is="showcase-book" data="{{books: recommendBooks}}"></template> 
+                  </panel> -->
+
+
+            <view style="display:flex;flex:left;justify-content:space-around;margin-top:8px;flex-flow: wrap">
+                  <view style="width:40%;margin-left:12px;margin-top:12px">
+                        <image  style='margin-right:18rpx;width: 110px!important; height: 110px!important;min-width: 110px!important; max-width: 110px!important' mode='aspectFill'
+        src="{{'/images/good-01.jpeg'}}" 
+        /> 
+                  <view style="font-size:14px;color:#333">洋甘菊洗手液</view>
+                  <view style="display:flex;justify-content:space-between;font-size:10px;color:#aaa">
+                        <view> 1800积分</view>
+                        <view> 已兑换10</view>
+                  </view>
+                  </view>
+
+                    <view style="width:40%;margin-left:12px;margin-top:12px">
+                        <image  style='margin-right:18rpx;width: 110px!important; height: 110px!important;min-width: 110px!important; max-width: 110px!important' mode='aspectFill'
+        src="{{'/images/good-02.jpeg'}}" 
+        /> 
+                  <view style="font-size:14px;color:#333">韩束金刚侠面膜</view>
+                  <view style="display:flex;justify-content:space-between;font-size:10px;color:#aaa">
+                        <view> 27000积分</view>
+                        <view> 已兑换17</view>
+                  </view>
+
+                  </view>
+
+
+                      <view style="width:40%;margin-left:12px;margin-top:12px">
+                        <image  style='margin-right:18rpx;width: 110px!important; height: 110px!important;min-width: 110px!important; max-width: 110px!important' mode='aspectFill'
+        src="{{'/images/good-03.jpeg'}}" 
+        /> 
+                  <view style="font-size:14px;color:#333">小熊玻璃壶养生热水壶1.5L 米白色</view>
+                  <view style="display:flex;justify-content:space-between;font-size:10px;color:#aaa">
+                        <view> 13500积分</view>
+                        <view> 已兑换8</view>
+                  </view>
+
+                  </view>
+
+
+
+
+                      <view style="width:40%;margin-left:12px;margin-top:12px">
+                        <image  style='margin-right:18rpx;width: 110px!important; height: 110px!important;min-width: 110px!important; max-width: 110px!important' mode='aspectFill'
+        src="{{'/images/good-04.jpeg'}}" 
+        /> 
+                  <view style="font-size:14px;color:#333">小熊白色电饭煲 3L</view>
+                  <view style="display:flex;justify-content:space-between;font-size:10px;color:#aaa">
+                        <view> 18800积分</view>
+                        <view> 已兑换13</view>
+                  </view>
+
+                  </view>
+
+
+
+            </view>
+
+            <view style="margin-top:15px;font-size:10px;color:#aaa;text-align:center">
+           <text> 客服工作时间09:00-18:00
+            
+              如有疑问，请拨打电话17737118206 </text>
+            </view>
+
+
+      <!--
+      <view class="list">
+            <view>提现金额</view>
+            <input disabled="{{!canReflect}}" value="{{key}}" bindinput="keyInput" type="number" placeholder="请输入提现金额"></input>
+      </view>
+      <view class="confirm" bindtap="check">确认</view>
+      <view class="tips">
+            <view class="t1">
+                  <image src="/images/about.png" /> 提现说明：
+            </view>
+            <view class="t2">1. 提现利率为1%</view>
+            <view class="t2">2. 为避免浪费请求资源，请满10元提现</view>
+            <view class="t2">3. 本程序竭力保证每位同学的利益，出现任何问题不要慌，马上和客服联系处理</view>
+      </view>
+
+      -->
+</view>
+
+
+<!-- 登录对话框 -->
+<kw-login class="login" />

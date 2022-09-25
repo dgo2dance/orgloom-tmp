@@ -1,0 +1,35 @@
+
+<view class="con_input">
+
+      <view class="getButton" wx:if="{{userInfo}}" >
+    <button wx:if="{{canIUse}}" open-type="getUserInfo" bindgetuserinfo="bindGetUserInfo">授权登录</button>
+    </view>
+
+    <view class="top_2" wx:if="{{canIUse&&userInfo.avatarUrl.length>0}}" >
+            <view class="avator">
+                  <open-data wx:if="{{userinfo}}" type="userAvatarUrl"></open-data>
+                  <image  src="{{userInfo.avatarUrl}}"></image>
+
+            </view>
+                        <view class="edit" bindtap="edithead" data-id="{{personDetail.id}}">
+                              <image src="/images/edit.png" class='editImage'></image>
+                        </view>
+
+      </view>
+
+
+</view>
+
+
+
+
+
+<view class='share' wx:if="{{canIUse&&userInfo.avatarUrl.length>0}}" >
+  <text>下一步</text>
+  <!--
+  <button open-type='share'></button>
+  -->
+  <button bindtap='submit'></button>
+
+</view>
+

@@ -1,0 +1,90 @@
+{
+      "pages": [
+      
+            "pages/index/index",
+           
+            "pages/start/start", 
+            "pages/login/login",
+            "pages/loginOne/loginOne",
+            "pages/publish/publish",
+            "pages/my/my",
+            "pages/detail/detail",
+            "pages/parse/parse",
+            "pages/reflect/reflect",
+            "pages/recharge/recharge",
+            "pages/search/search",
+            "pages/edit/edit",
+            "pages/editInfo/editInfo",
+            "pages/editInfo/addCompany",
+            "pages/editInfo/editInfoSec",
+            "pages/editInfo/add",
+            "pages/editInfo/addInfo",
+            "pages/editInfo/addInfoSec",
+            "pages/person/person",
+            "pages/person/addPerson",
+            "pages/stock/stock", 
+            "pages/free/free",
+            "pages/free/freeView",
+            "pages/myFollow/myFollow",
+            "pages/myFree/myFree",
+            "pages/writer/writer",
+            "pages/thread/thread",
+            "pages/message/message",
+            "pages/notice/notice",
+            "pages/noticeDetail/noticeDetail",
+            "pages/first/first",
+
+
+            "pages/indexNew/index",
+            "pages/username/username",
+            "pages/task/task",
+
+            "pages/org/org",
+            "pages/poster/poster"
+      ],
+      "window": {
+            "backgroundColor": "#37a3fd",
+            "backgroundTextStyle": "light",
+            "navigationBarBackgroundColor": "#37a3fd",
+            "navigationBarTitleText": "光迹",
+            "navigationBarTextStyle": "white"
+      },
+      "sitemapLocation": "sitemap.json",
+      "tabBar": {
+            "color": "#707070",
+            "selectedColor": "#000000",
+            "list": [
+                  {
+                        "pagePath": "pages/index/index",
+                        "text": "首页",
+                        "iconPath": "/images/tabbar/home.png",
+                        "selectedIconPath": "/images/tabbar/home_on.png"
+                  },
+                  
+                  {
+                        "pagePath": "pages/start/start",
+                        "text": "目录",
+                        "iconPath": "/images/tabbar/list.png",
+                        "selectedIconPath": "/images/tabbar/list_on.png"
+                  },
+                  {
+                        "pagePath": "pages/message/message",
+                        "text": "消息",
+                        "iconPath": "/images/tabbar/message.png",
+                        "selectedIconPath": "/images/tabbar/message_on.png"
+                  },
+
+                  {
+                        "pagePath": "pages/my/my",
+                        "text": "我的",
+                        "iconPath": "/images/tabbar/my_2.png",
+                        "selectedIconPath": "/images/tabbar/my_2_on.png"
+                  }
+            ]
+      },
+
+  "usingComponents": {
+    
+}
+    
+}

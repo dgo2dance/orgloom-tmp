@@ -1,0 +1,99 @@
+<!-- 插屏广告 
+<kw-adver type="home_inters" />
+-->
+
+<!-- 品牌 
+<view style="background-image: url({{meta.app_cover}});background-size:100% auto;">
+<view class='brand'>
+-->
+  <!-- 搜索框-->
+  <view></view>
+  <!-- 品牌展示 
+  <view class='h-bottom' style='margin-top:56rpx;'>
+    <image class='logo' src="{{meta.app_logo}}">
+    </image>
+    <view class="v-right" style='margin-left: auto;'>
+      <view class='horizontal' style='margin-bottom: 14rpx;'>
+        <block wx:if="{{meta.app_signin}}">
+          <button class='btn-clear btn-home' bindtap='clickSignin'> 
+            <image src="{{theme.images}}/signin.png"/>{{signed? '已签到': '签到'}}
+          </button>
+        </block>
+
+      </view>
+      <view class='app-name'>{{meta.app_name}}</view>
+      <view class='subtitle' style='color: #ffffff11; font-weight: 800;'>
+        <text space="ensp"> </text>
+      </view>
+    </view>
+  </view>
+</view>
+</view>
+-->
+
+<!-- 公告部分 
+<view class='card' wx:if="{{speaker.title}}" >
+  <view class='single-line speaker' bindtap='clickSpeaker'>
+    <image src='{{theme.images}}/speaker.png'></image>
+    <text style='margin-right: 8rpx;'>公告: </text> 
+    <text>{{ speaker.title }}</text>
+  </view>
+</view>
+-->
+<!-- 置顶帖 
+<view class='card' wx:if="{{tops.length > 0}}">
+  <view class='top-post' wx:for="{{tops}}" wx:for-item="item" wx:key="id">
+    <view style='height: 16rpx;' wx:if="{{index > 0}}"></view>
+    <view class='single-line' style='width: 720rpx;' 
+      data-idx='{{index}}' 
+      bindtap='clickTopList' 
+      >
+      <text class='top'>顶</text> <text>{{item.title}}</text>
+    </view>
+  </view>
+</view>
+-->
+<!-- 自定义广告 
+<kw-adver type="home_banner" hot="true" />
+
+<kw-poll />
+-->
+ <view class="top">
+      <view class="cate-text">帖子</view> 
+      <view class="cate-text">广场</view> 
+   </view>
+
+   <view  class="tablayout">
+ <!-- <image class="search" src="/res/search.png"  bindtap="clickSearch" />  -->
+  <kw-tab bind:onTabChanged="onTabChanged" items="{{tab.itemsTop}}" />
+</view>
+
+<!-- 顶部TAB -->
+<view  class="tablayout">
+ <!-- <image class="search" src="/res/search.png"  bindtap="clickSearch" />  -->
+  <kw-tab bind:onTabChanged="onTabChanged" items="{{tab.items}}" />
+</view>
+
+<!-- 线 -->
+<view style='margin-bottom:1rpx; background-color: #fefefe;'/>
+
+<!-- 列表 -->
+<view style="min-height:100vh">
+  <block wx:if="{{tab.current==0}}">
+    <postlist class="tabpage" filter="" tags="{{tags}}" />
+  </block>
+
+  <block wx:elif="{{tab.current==1}}">
+    <postlist class="tabpage" filter="val" />
+  </block>
+
+  <block wx:else>
+    <userlist class="tabpage" />
+  </block>
+</view>
+<!--
+<view hidden="{{hideNewButton}}">
+  <image catchtap='newTopic' class='new-topic' src="{{theme.images}}/write.png"></image>
+</view>
+--> 
+<kw-login class="login" />

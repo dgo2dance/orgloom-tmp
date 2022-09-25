@@ -1,0 +1,11 @@
+
+{
+  "enablePullDownRefresh": true,
+  "usingComponents": {
+    "kw-tab": "../tmpl/stab/kw-tab",
+    "kw-login": "../tmpl/login/dialog",
+    "kw-loading": "../tmpl/loading/loading",
+    "kw-login": "../tmpl/login/dialog"
+
+  }
+}

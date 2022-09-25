@@ -1,0 +1,16 @@
+<!--pages/tmpl/video/kw-video.wxml-->
+<view class='container' catchtap='dummy' style="width:{{width}}">
+  <view class='cover' catchtap='clickVideo' wx:if="{{showCover}}">
+    <image class='play' src="/res/video_play.png"> </image>
+    <image class='snapshot' src="{{video.cover}}" mode='aspectFill' lazy-load='true'></image>
+  </view>
+  <video id="item-video" wx:if="{{!showCover}}"
+    class='video' src="{{video.video}}" 
+    object-fit="cover" 
+    controls="true"
+    autoplay='{{true}}'
+    show-fullscreen-btn="{{false}}"
+    show-center-play-btn="{{false}}"
+    bindended="handleVideoEnded"
+    ></video>
+</view>

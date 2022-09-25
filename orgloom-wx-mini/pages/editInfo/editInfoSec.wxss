@@ -1,0 +1,205 @@
+/*科室排班表  */
+
+@import "../../utils/weui.wxss";
+@import "../../utils/index.wxss";
+
+.table{
+  display: inline-flex;
+  flex-direction: column;
+  border: 1rpx solid rgba(218, 217, 217, 1);
+  border-bottom: 0;  
+}
+
+.scrollClass {
+  display: flex;
+  width: 100%;
+  white-space: nowrap;
+  margin-top: 23px;
+  height: 100%;
+  background-color: white;
+}
+
+.table_header {
+  display: inline-flex;
+}
+
+.th {
+  display: flex;
+  flex-direction: column;
+  width: 89rpx;
+  height: 89rpx;
+  background: rgba(241, 252, 255, 1);
+  border-right: 1rpx solid rgba(218, 217, 217, 1); 
+  border-bottom: 1rpx solid rgba(218, 217, 217, 1); 
+  justify-content: center;
+  align-items: center;
+  overflow-x: auto;
+}
+.cell_label{
+  font-size: 26rpx;
+  color: rgba(74, 74, 74, 1);
+}
+.cell_date_label{
+  font-size: 20rpx;
+  color: rgba(74, 74, 74, 1);
+}
+.table_main {
+  display: inline-flex;
+  flex-direction: row;
+}
+.right-item{
+  display: flex;
+  flex-direction: row;
+}
+.td {
+  display: flex;
+  flex-direction: column;
+  width: 89rpx;
+  /* height: 90rpx; */
+  background: white;
+  justify-content: center;
+  align-items: center;
+  border: 1rpx solid rgba(200, 200, 200, 0.5);
+  border-top: 0;
+  border-left:0; 
+}
+
+.table_Text_class {
+  display: flex;
+  justify-content: center;
+  align-items: center;
+  height: 60rpx;
+  font-size: 30rpx;
+  color: rgba(55, 134, 244, 1);
+  width: 100%;
+  word-break: normal;
+  border-bottom: 1rpx solid rgba(218, 217, 217, 1);
+}
+.table_Text_last_class{
+  display: flex;
+  justify-content: center;
+  align-items: center;
+  height: 60rpx;
+  font-size: 30rpx;
+  color: rgba(55, 134, 244, 1);
+  width: 100%;
+  word-break: normal;
+
+}
+.pop-row-first{
+margin-right: 50px;
+height: 120rpx;
+line-height: 10rpx;
+
+}
+.header-cell{
+  text-align:center;
+}
+
+.container{
+  
+  margin:5rpx;
+}
+
+.dark,
+.light {
+  color: #fff;
+  font-size: 13px;
+  line-height: 30px;
+  text-align: center;
+  margin-bottom: 10px;
+  background-clip: content-box;
+}
+
+.dark {
+  background-color: #39a9ed;
+}
+
+.light {
+  background-color: #66c6f2;
+}
+.tt{
+  
+  height: 160rpx;
+
+}
+
+
+
+.weui-label {
+    font-size: 32rpx!important; 
+    }
+
+.share{
+   background-color: #FFB6C1;
+}
+
+.weui-input {
+  font-size: 32rpx!important;
+  
+  }
+
+.con_input {
+
+  margin-bottom: 200rpx;
+}
+.picker{
+  font-size: 32rpx;
+}
+
+.weui-cell {
+  padding: 10px!important;
+}  
+textarea{
+  border: 1rpx solid rgb(180, 180, 180);
+ }
+
+ textarea{
+  height: 200rpx!important;
+width: 100%;
+border: 1rpx solid #eee;
+/* margin-top: 12px;*/
+padding-top: 10px;
+
+ }
+ 
+.botsum{
+  font-size: 32rpx;
+  color: #aaaaaa;
+}
+
+.weui-cell-text{
+  display: flex;
+  flex-direction:column;
+  padding: 10px!important;
+
+} 
+
+.weui-cell-text:before {
+  content: " ";
+  position: absolute;
+  left: 0;
+  top: 0;
+  right: 0;
+  height: 1px;
+  border-top: 1rpx solid rgba(0,0,0,.1);
+  color: rgba(0,0,0,.1);
+  left: 16px;
+  
+  }
+
+  .selector{
+    height: 60rpx;
+    width: 100%;
+   /* border: 1px solid #eee;
+    border-radius: 5rpx;
+    */
+  }
+
+  .input-placeholder {
+    font-size: 30rpx;
+    line-height: 50rpx;
+    color: #9b9b9b;
+    
+    }
+    

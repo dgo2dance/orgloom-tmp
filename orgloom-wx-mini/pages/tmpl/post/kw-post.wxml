@@ -1,0 +1,98 @@
+<!--pages/tmpl/post/kw-post.wxml-->
+<view>
+  <!-- Text -->
+
+  <view wx:if="{{!item.rich && !item.goods}}" class="itemwrapper title">
+    <kw-text text="{{item.title}}" limit="{{100}}" ></kw-text>
+  </view>
+
+  <view style="margin-bottom:3px">
+  {{item.createTime}}
+  </view>
+
+
+  <!--  <kw-text text="{{item.content}}" limit="{{70}}" ></kw-text>  -->
+   <kw-text text="{{item.contents}}" limit="{{40}}" ></kw-text>
+   <view>
+
+  </view>
+
+  <!-- Rich Text -->
+  <view wx:if="{{item.rich}}" class="itemwrapper">
+    <view class="rich">
+      <view class="view">{{item.title}}</view>
+      <text class="text">{{item.excerpt}}... </text>
+      <text class="text" style="color:dodgerblue"> 全文</text>
+    </view>
+  </view>
+
+  <!-- Image列表 -->
+  
+  <view wx:if="{{item.images.length>0 }}" class="itemwrapper-img">
+    <view style='margin: 8rpx 0rpx'>
+    <!-- <img-grid images="{{item.images}}" mr="{{mr}}"> </img-grid>    -->
+
+              <block>
+          <view class='grid' style="margin-right:{{mr}}">
+            <view class="cell3" wx:for="{{item.images}}" wx:for-item="path" wx:key="path">
+                <view class='inner'>
+                  <image class="image" mode='aspectFill' 
+                    style='width: 100%; height: 100%;' 
+                    src="{{path.imageIcon}}"
+                    lazy-load='true'
+                    catchtap='clickImage' data-idx='{{index}}' data-src="{{path.imageIcon}}">
+                  </image>
+                </view>
+            </view>
+          </view>
+        </block>
+
+    </view>
+  </view>
+  
+
+  <!--
+  <view wx:if="{{item.imageIcon }}" class="itemwrapper-img">
+    <view style='margin: 8rpx 0rpx'>
+
+              <block>
+          <view class='grid' style="margin-right:{{mr}}">
+            <view class="cell3">
+                <view class='inner'>
+                  <image class="image" mode='aspectFill' 
+                    style='width: 100%; height: 100%;' 
+                    src="{{item.imageIcon}}"
+                    lazy-load='true'
+                    catchtap='clickImage'  data-src="{{item.imageIcon}}">
+                  </image>
+                </view>
+            </view>
+          </view>
+        </block>
+
+    </view>
+  
+  </view>
+  -->
+
+
+  <!-- 视频 -->
+  <view wx:if="{{item.video}}" class="itemwrapper" style="margin-right:{{mr}}">
+    <kw-video video="{{item.video}}" />
+  </view>
+
+  <!-- 链接 -->
+  <!-- <view wx:if="{{item.link}}" class="itemwrapper">
+    <kw-link link="{{item.link}}" />
+  </view> -->
+
+  <!-- 商品推广 -->
+  <view wx:if="{{item.goods}}" class="itemwrapper">
+    <kw-goods goods="{{item.goods}}" content="{{item.content}}" />
+  </view>
+
+  <!-- 地理位置 -->
+  <block wx:if="{{item.location && item.location.name}}">
+    <location location="{{item.location}}"/>
+  </block>
+</view>

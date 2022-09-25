@@ -1,0 +1,55 @@
+
+<view wx:if="{{isHide}}">
+    <view wx:if="{{canIUse}}" >
+        <view class='header'>
+            <image src='../../images/zaizan.png' ></image>
+        </view>
+
+        <view class='content'>
+          <!--  <view>申请获取以下权限</view>
+            <text>获得你的公开信息(昵称，头像等)</text>
+            -->
+        </view>
+
+        <!--
+        <button class='bottom' type='primary' open-type="getUserInfo" lang="zh_CN" bindgetuserinfo="bindGetUserInfo">
+            授权登录
+        </button>
+        -->
+
+             <button class="bottom" type='primary' open-type="getPhoneNumber" bindgetphonenumber="getPhoneNumber">
+                 获取手机号
+                  <block wx:if="{{phone==''}}"> 点击获取手机号</block>
+                <!--  <block wx:if="{{phone!==''}}"> {{phone}}</block> -->
+                  <image wx:if="{{phone==''}}" class="right" src="/images/right.png" />
+            </button>
+
+    </view>
+    <view wx:else>请升级微信版本</view>
+</view>
+
+<view wx:else>
+    <view class="loginAt">登录中</view>
+</view>
+
+
+<!--
+<view>
+
+    sssssdddd
+
+
+    </view>
+
+    <view class="container" wx:if="{{!hasUserInfo && canIUse}}">
+  <view class="userinfo" >
+    <button  open-type="getUserInfo" bindgetuserinfo="getUserInfo"> 登录中 </button>
+
+  </view>
+
+  <view class="usermotto">
+    <text class="user-motto">{{motto}}</text>
+  </view>
+  
+</view>
+-->

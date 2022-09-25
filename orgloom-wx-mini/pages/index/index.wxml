@@ -1,0 +1,156 @@
+<wxs src="../../common.wxs" module="morejs" />
+<view class="top_box">
+
+      <!-- <view class="top_word" >
+            <view class="top_text">看组织人员  来光迹</view>
+      </view> -->
+
+      <view class="search_box" bindtap="search">
+            <image class="search_ico" src="/images/search.png"></image>
+            <view class="search_text">搜索您感兴趣,或看看有没有自己的组织圈</view>
+      </view>
+      <!--
+      <image bindtap="changeCard" class="top_list" src="{{iscard?'/images/PeopleMan.png':'/images/PeopleWomen.png'}}"></image>
+      -->
+</view>
+
+
+
+
+<view>
+  <!--
+  <panel title="组织" url="/pages/my/my" >
+ <template is="showcase-book" data="{{books: recommendBooks}}"></template> 
+  </panel>
+
+   -->
+<!--
+<view class="panel" >
+  <navigator url="{{url}}" hover-class="panel-hd--active">
+    <view class="panel-hd">
+      <view>我关注的</view>
+
+</view>
+  </navigator>
+  <slot></slot>
+</view>
+
+<view class="ui-panel"  >
+  
+        <navigator wx:for="{{mylist}}" wx:key="_id" class="weui-cell ui-booklist-card" hover-class="ui--active" url="/pages/stock/stock?id={{item.id}}&&name={{item.name}}">
+      <image class="ui-booklist-card__img" src="{{item.logoIcon || '/images/icon_empty_booklist.png'}}" mode="aspectFit"></image>
+      <view class="ui-booklist-card__info">
+        <view class="ui-booklist-card__info-title font-black-34">{{item.name}}</view>
+        <view class="font-gray-26">
+         {{item.followCount}}人关注</view>
+      </view>
+      <view class="ui-icon-more-area" data-type="create" data-index="{{index}}" catchtap="onShowActionSheet" hover-stop-propagation>
+        <image src="/images/icon_more.png" mode="widthFix" class="ui-icon-more"></image>
+      </view>
+    </navigator>
+              <view class="blank_text">还没有任何关注,关注后获取内容</view>
+          </view>
+      </view>
+
+   
+
+
+  
+<view class="panel"  bindtap='clickTag'>
+  <navigator url="{{url}}" hover-class="panel-hd--active">
+    <view class="panel-hd">
+      <view>热门组织</view>
+      <view class="panel-hd__arrow"></view>
+    </view>
+  </navigator>
+  <slot></slot>
+</view>
+
+<view class="ui-panel"  >
+  
+        <navigator wx:for="{{list}}" wx:key="_id" class="weui-cell ui-booklist-card" hover-class="ui--active" url="/pages/stock/stock?id={{item.id}}&&name={{item.name}}">
+      <image class="ui-booklist-card__img" src="{{item.logoIcon || '/images/icon_empty_booklist.png'}}" mode="aspectFit"></image>
+      <view class="ui-booklist-card__info">
+        <view class="ui-booklist-card__info-title font-black-34">{{item.name}}</view>
+        <view class="font-gray-26" >
+         {{item.followCount}}人关注</view>
+      </view>
+      <view class="ui-icon-more-area" data-type="create" data-index="{{index}}" catchtap="onShowActionSheet" hover-stop-propagation>
+        <image src="/images/icon_more.png" mode="widthFix" class="ui-icon-more"></image>
+      </view>
+    </navigator>
+</view>
+
+-->
+   
+<view class="cate-nav">
+  <!--
+    <scroll-view scroll-x="true" class="cate-nav-body" style="width: 750rpx;" scroll-left="{{scrollLeft}}">
+      <view wx:for="{{navList}}" class="item {{ id == item.id ? 'active' : ''}}" wx:key="id"  data-id="{{item.id}}" data-index="{{index}}" bindtap="switchCate">
+        <view class="name">{{item.name}}</view>
+       
+       <view class="border-bottom {{ id == item.id ? 'active' : ''}}"></view>
+
+      </view>
+    </scroll-view>
+    <view class="top">
+      <view class="cate-text">组织</view> 
+      <image class="search" src="/res/search.png"  bindtap="onClickSearch" />
+   </view>
+   -->
+
+    <view  class="tablayout">
+  <kw-tab bind:onTabChanged="onTabChanged" items="{{tab.items}}" />
+</view>
+
+
+  <view class="select-content-container" style="padding:0 5px 0 5px;width: auto!important;">
+
+     <block wx:if="{{tab.current==0}}">
+    <postlist class="tabpage" ids="{{event}}" filter="" tags="{{tags}}" />
+  </block>
+
+  <block wx:elif="{{tab.current==1}}">
+    <postlist class="tabpage" ids="{{event}}" filter="val" />
+  </block>
+
+  <block wx:else>
+    <userlist class="tabpage" />
+  </block>
+
+
+          <!--
+    <view class='tab-title-container'>
+    
+      
+    </view>
+    -->
+        <!-- <view>
+                  <navigator wx:for="{{list}}" wx:key="_id" class="weui-cell ui-booklist-card" hover-class="ui--active" url="/pages/stock/stock?id={{item.id}}&&name={{item.name}}">
+      <image class="ui-booklist-card__img" src="{{item.logoIcon || '/images/icon_empty_booklist.png'}}" mode="aspectFit"></image>
+      <view class="ui-booklist-card__info">
+        <view class="ui-booklist-card__info-title font-black-34">{{item.name}}</view>
+        <view class="font-gray-26">
+         {{item.followCount}}人关注</view>
+      </view>
+      <view class="ui-icon-more-area" data-type="create" data-index="{{index}}" catchtap="onShowActionSheet" hover-stop-propagation>
+        <image src="/images/icon_more.png" mode="widthFix" class="ui-icon-more"></image>
+      </view>
+    </navigator>
+
+    <view class="nocontent" wx:if="{{list.length==0&&loading!=true}}">
+                  <image lazy-load src="/images/blank.png"></image> 
+                    <view class="blank_text">没有关注，关注后获取推送</view>
+                  </view>
+
+        </view> -->
+
+    <view class='load-more-container'>
+      <view class='load-more-button' bindtap='loadMore'>{{loadMore}}</view>   
+    </view>
+  </view>
+
+
+  </view>
+  
+</view>

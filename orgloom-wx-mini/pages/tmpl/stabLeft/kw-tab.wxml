@@ -1,0 +1,29 @@
+    <scroll-view  class="cate-nav-body" style="height:100vh" scroll-y>
+             
+
+        <view class="tab-h">
+
+
+    
+
+        <view wx:for="{{items}}" wx:key="id"  data-id="{{item.id}}"  data-index="{{index}}"
+          style="{{current == item.id ? ('color:'+theme.tabColor+';' ):''}} "
+          class="tab-item {{current == item.id ?'active':''}}">
+          <view data-idx="{{item.id}}" bindtap="clickTab">{{item.name}}</view>
+          <view class='indicator' style='background: {{theme.tabColor}}'></view>
+        </view>
+
+<!--
+        <view wx:for="{{items}}" class="item {{ id == item.id ? 'active' : ''}}" wx:key="id"  data-id="{{item.id}}" data-index="{{index}}" bindtap="switchCate">
+        <view class="name">{{item.name}}</view>
+       
+       <view class="border-bottom {{ id == item.id ? 'active' : ''}}"></view>
+           
+
+      </view>
+      -->
+   
+         
+
+</view>
+    </scroll-view>

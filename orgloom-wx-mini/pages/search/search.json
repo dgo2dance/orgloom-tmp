@@ -1,0 +1,6 @@
+{
+  "usingComponents": {
+    "kw-login": "../tmpl/login/dialog"
+
+  }
+}

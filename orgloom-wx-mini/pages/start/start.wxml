@@ -1,0 +1,114 @@
+<wxs src="../../common.wxs" module="morejs" />
+
+    <view  class="tablayout" style="position:fixed;top:0;left:0;z-index:1001">
+  <kw-tab-top bind:onTabChanged="onTabChanged" items="{{tab.items}}" />
+</view>
+  
+
+  <view class="select-content-container">
+            
+              <block wx:if="{{tab.current==0}}">
+
+                          
+                             <view style="padding-top:40px;">
+
+                                <view class="panel-hd" style="padding: 14px 15px 10px;">
+                                          <view>我关注的</view>
+
+                                    </view>
+                              <view style="display:flex;justify-content: space-start;flex-wrap: wrap;font-size: 12px;margin:0px 12px 0px 12px;">
+                              <navigator wx:for="{{listFollow}}" wx:key="_id" class="weui-cell ui-booklist-card" style="width:30;" hover-class="ui--active" url="/pages/stock/stock?id={{item.id}}&&name={{item.name}}">
+                              <image class="ui-booklist-card__img" style="margin-right: 0px!important;"src="{{item.logoIcon || '/images/icon_empty_booklist.png'}}" mode="aspectFit"></image>
+                              <view class="ui-booklist-card__info">
+                              <!-- <view class="ui-booklist-card__info-title font-black-34">{{item.name}}</view> -->
+                       
+                              </view>
+                              <!-- <view class="ui-icon-more-area" data-type="create" data-index="{{index}}" catchtap="onShowActionSheet" hover-stop-propagation>
+                              <image src="/images/icon_more.png" mode="widthFix" class="ui-icon-more"></image>
+                              </view> -->
+                                    </navigator>
+
+                                     <view class="nocontent" wx:if="{{listFollow.length==0&&loading!=true}}">
+                  <!--  <image lazy-load src="/images/blank.png"></image> -->
+                    <view class="blank_text">未登录或没有关注，关注后获取推送</view>
+                  </view>
+
+
+                              </view>
+
+
+                                     <view class="panel-hd" style="padding: 14px 15px 10px;">
+                                          <view>推荐</view>
+
+                                    </view>
+                                          <navigator wx:for="{{listSuggest}}" wx:key="_id" class="weui-cell ui-booklist-card" hover-class="ui--active" url="/pages/stock/stock?id={{item.id}}&&name={{item.name}}">
+                              <image class="ui-booklist-card__img" src="{{item.logoIcon || '/images/icon_empty_booklist.png'}}" mode="aspectFit"></image>
+                              <view class="ui-booklist-card__info">
+                              <view class="ui-booklist-card__info-title font-black-34">{{item.name}}</view>
+                              <view class="font-gray-26">
+                              {{item.followCount}}人关注</view>
+                              </view>
+                              <view class="ui-icon-more-area" data-type="create" data-index="{{index}}" catchtap="onShowActionSheet" hover-stop-propagation>
+                              <image src="/images/icon_more.png" mode="widthFix" class="ui-icon-more"></image>
+                              </view>
+                        </navigator>
+                              </view>
+
+
+              </block>
+
+              <block wx:elif="{{tab.current==1}}">
+
+                        <view class="{{scrollTop>310?'nofixed':''}}">
+                        </view>
+
+                        <view class="cate-nav">
+                        
+
+                        <view  class="tablayout">
+                        <kw-tab bind:onTabChanged="switchCate" items="{{navList}}" />
+                        </view>
+
+
+                        </view>
+
+
+                        <view class="select-content-container-inner">
+                        
+                              <view>
+                                          <navigator wx:for="{{list}}" wx:key="_id" class="weui-cell ui-booklist-card" hover-class="ui--active" url="/pages/stock/stock?id={{item.id}}&&name={{item.name}}">
+                              <image class="ui-booklist-card__img" src="{{item.logoIcon || '/images/icon_empty_booklist.png'}}" mode="aspectFit"></image>
+                              <view class="ui-booklist-card__info">
+                              <view class="ui-booklist-card__info-title font-black-34">{{item.name}}</view>
+                              <view class="font-gray-26">
+                              {{item.followCount}}人关注</view>
+                              </view>
+                              <view class="ui-icon-more-area" data-type="create" data-index="{{index}}" catchtap="onShowActionSheet" hover-stop-propagation>
+                              <image src="/images/icon_more.png" mode="widthFix" class="ui-icon-more"></image>
+                              </view>
+                        </navigator>
+                              </view>
+
+                        <view class='load-more-container'>
+                              <view class='load-more-button' bindtap='loadMore'>{{loadMore}}</view>   
+                        </view>
+                        </view>
+
+
+                        <view class="nocontent" wx:if="{{list.length==0&&loading!=true}}">
+                              <image lazy-load src="/images/blank.png"></image>
+                              <view class="blank_text">这里空空如也~</view>
+                        </view>
+                  
+                  </block>
+
+</view>
+
+<van-transition show="{{ scrollTop>500 }}" custom-class="block" duration="600">
+      <view class="totop" bindtap="gotop">
+            <image  lazy-load src="/images/top.png"></image>
+      </view>
+</van-transition>
+
+
+<kw-login class="login" />

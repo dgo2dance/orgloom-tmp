@@ -1,0 +1,23 @@
+<!--pages/tmpl/input/input.wxml-->
+<view class="release" catchtap='dumy'>
+  <input class="text" 
+    value='{{textMessage}}'
+    bindinput='bindInput'
+    bindconfirm="sendComment" 
+    placeholder-class="input_null" 
+    fixed="{{true}}"
+    maxlength="140" 
+    show-confirm-bar="{{true}}" 
+    confirm-type="send"
+    cursor-spacing="32rpx" 
+    focus="{{true}}"
+    placeholder="回复 {{hint}}">
+  </input>
+
+  <view class="submit">
+    <button disabled="{{!reply.enable}}"
+      class="button" 
+      style="{{reply.enable? '':'color:#ccc'}}" 
+      catchtap='sendComment'>发送</button>
+  </view>
+</view>

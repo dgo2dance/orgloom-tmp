@@ -1,0 +1,2 @@
+# jinseMini
+jinse get friend

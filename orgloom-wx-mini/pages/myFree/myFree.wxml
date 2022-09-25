@@ -1,0 +1,61 @@
+<wxs src="../../common.wxs" module="morejs" />
+
+
+
+<view>
+  <!--
+  <panel title="组织" url="/pages/my/my" >
+ <template is="showcase-book" data="{{books: recommendBooks}}"></template> 
+  </panel>
+  -->
+<view class="panel" >
+  <navigator url="{{url}}" hover-class="panel-hd--active">
+    <view class="panel-hd">
+      <view>我加入的</view>
+
+</view>
+  </navigator>
+  <slot></slot>
+</view>
+
+<view class="ui-panel"  >
+  
+        <navigator wx:for="{{list}}" wx:key="_id" class="weui-cell ui-booklist-card" hover-class="ui--active" url="/pages/free/free?id={{item.id}}&&name={{item.name}}">
+        
+  
+    <view class="freeIcon">
+        {{item.firstName}}
+      </view>
+
+      <view class="ui-booklist-card__info">
+        <view class="ui-booklist-card__info-title font-black-34">{{item.freeName}}</view>
+        <view class="font-gray-26">
+        {{item.goalsClassifys}}
+     <!--    {{item.interestClassifys}}   |    {{item.goalsClassifys}}
+      {{ sex[item.sexClassify].value}} {{education[item.eduClassify].value}}  {{item.height}}cm  -->
+         
+         
+         </view>
+      </view>
+      <view class="ui-icon-more-area" data-type="create" data-index="{{index}}" data-id="{{item.id}}"
+      catchtap="onShowActionSheet" hover-stop-propagation>
+        <image src="/images/icon_more.png" mode="widthFix" class="ui-icon-more"></image>
+      </view>
+    </navigator>
+</view>
+
+   
+
+  
+</view>
+
+
+<!-- 登录对话框 -->
+<kw-login class="login" />
+
+<van-action-sheet
+  show="{{show}}"
+  actions="{{actions}}"
+  bind:close="onClose"
+  bind:select="onSelect"
+/>

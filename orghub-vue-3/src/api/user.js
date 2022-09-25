@@ -1,0 +1,52 @@
+/**
+ * 用户信息管理api
+ */
+
+import request from '@/utils/request';
+
+// 用户登陆
+export function login(data) {
+    return request({
+    //  url: '/auth/login',
+        url: '/admin/base/open/loginFront',
+        method: 'post',
+        data
+    });
+}
+
+// 获取用户信息
+export function getInfo() {
+    return request({
+    //    url: '/user/info',
+        url:'/admin/base/sys/user/infoFront',
+        method: 'get'
+    });
+}
+
+// 创建用户
+export function createUser(data) {
+    return request({
+    //    url: '/user/createUser',
+        url:'/admin/base/open/register',
+        method: 'post',
+        data
+    });
+}
+
+// 更新用户信息
+export function updateUserInfo(data) {
+    return request({
+        url: '/user/update',
+        method: 'post',
+        data
+    });
+}
+
+// 修改用户密码
+export function updatePass(data) {
+    return request({
+        url: '/user/updatePassword',
+        method: 'post',
+        data
+    });
+}

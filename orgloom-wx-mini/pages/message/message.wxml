@@ -1,0 +1,75 @@
+<wxs src="../../common.wxs" module="morejs" />
+ 
+<view class="{{scrollTop>310?'nofixed':''}}">
+</view>
+
+<!--
+  <view class="cate-nav">
+ 
+
+    <view  class="tablayout">
+  <kw-tab bind:onTabChanged="switchCate" items="{{navList}}" />
+</view>
+
+
+  </view>
+
+  -->
+
+
+  <view class="select-content-container">
+         
+
+         <view>
+             <navigator class="weui-cell ui-booklist-card" hover-class="ui--active" url="/pages/notice/notice">
+                   <view style="background-color: #daf1f9;width: 50px;height: 50px;text-align: center;vertical-align: center;display: flex;border-radius: 25px;flex-direction: row;align-items: center;justify-content: center;">
+      <image class="ui-booklist-card__img" style="margin-right:0px!important width:20px;height:20px" src="{{item.logoIcon || '/images/tabbar/message_on.png'}}" mode="aspectFit"></image>
+                  </view>
+      <view class="ui-booklist-card__info" style="margin-left:10px">
+        <view class="ui-booklist-card__info-title font-black-34">消息通知</view>
+      <!--  <view class="font-gray-26">
+         你的申请资料已经得到反馈人</view>  -->
+      </view>
+      <view class="ui-icon-more-area" data-type="create" data-index="{{index}}" catchtap="onShowActionSheet" hover-stop-propagation style="color:red">
+        未读:{{notRead}}
+       <!-- <image src="/images/icon_more.png" mode="widthFix" class="ui-icon-more"></image> -->
+      </view>
+    </navigator>
+        </view>
+
+
+         <!--
+        <view>
+                  <navigator wx:for="{{list}}" wx:key="_id" class="weui-cell ui-booklist-card" hover-class="ui--active" url="/pages/stock/stock?id={{item.id}}&&name={{item.name}}">
+      <image class="ui-booklist-card__img" src="{{item.logoIcon || '/images/icon_empty_booklist.png'}}" mode="aspectFit"></image>
+      <view class="ui-booklist-card__info">
+        <view class="ui-booklist-card__info-title font-black-34">{{item.name}}</view>
+        <view class="font-gray-26">
+         {{item.followCount}}人关注</view>
+      </view>
+      <view class="ui-icon-more-area" data-type="create" data-index="{{index}}" catchtap="onShowActionSheet" hover-stop-propagation>
+        <image src="/images/icon_more.png" mode="widthFix" class="ui-icon-more"></image>
+      </view>
+    </navigator>
+        </view>
+        -->
+
+    <view class='load-more-container'>
+      <view class='load-more-button' bindtap='loadMore'>{{loadMore}}</view>   
+    </view>
+  </view>
+
+
+<view class="nocontent" wx:if="{{list.length==0&&loading!=true}}">
+      <image lazy-load src="/images/blank.png"></image>
+      <view class="blank_text">这里空空如也~</view>
+</view>
+
+<van-transition show="{{ scrollTop>500 }}" custom-class="block" duration="600">
+      <view class="totop" bindtap="gotop">
+            <image  lazy-load src="/images/top.png"></image>
+      </view>
+</van-transition>
+
+<!-- 登录对话框 -->
+<kw-login class="login" />
